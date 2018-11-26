@@ -13,3 +13,38 @@ body {
     list-style-type: none;
 
 }
+
+.main__title {
+    color: $color-dull-orange;
+    font-size: 19px;
+    font-family: $font-family-merri;
+    font-weight: 900;
+    text-align: center;
+}
+
+.main__subtitle {
+    color: $color-dark-green-blue;
+    font-size: 13px;
+    font-family: $font-family-open;
+    text-align: center;
+
+}
+
+.main__item {
+    color: $color-gunmetal;
+    font-size: 16px;
+    font-family: $font-family-open;
+    text-align: center;
+}
+
+.btn__comenzar {
+    color: $color-white;
+    font-size: 16px;
+    font-family: $font-family-open;
+    font-weight: 600;
+    text-align: center;
+    background-color: $color-dirty-blue;
+    padding: 10px 20px;
+    border-radius: 21px;
+    border: 0px;
+}

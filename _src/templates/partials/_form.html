@@ -1,128 +1,141 @@
 <section class="section-form">
   <div class="section-form__container">
     <form action="">
-      <div class="section-form__fieldset-container">
-        <fieldset class="section-form__fieldset-container--design">
-          <div>
-            <img src="" alt="icon-diseño">
-            <h2>Diseña</h2>
-            <div>flecha</div>
-          </div>
-          <div class="colors">
-            <h3>Colores</h3>
-            <ul>
-              <li>
-                <label for="colors" class="colors">
-                  <input type="radio" id="colors" value="cold" name="colors">
-                  <div class="colors__list"></div>
-                  <div class="colors__list"></div>
-                  <div class="colors__list"></div>
-                </label>
-              </li>
-              <li>
-                <label for="colors" class="colors">
-                  <input type="radio" id="colors" value="warm" name="colors">
-                  <div class="colors__list"></div>
-                  <div class="colors__list"></div>
-                  <div class="colors__list"></div>
-                </label>
-              </li>
-              <li>
-                <label for="colors" class="colors">
-                  <input type="radio" id="colors" value="formal" name="colors">
-                  <div class="colors__list"></div>
-                  <div class="colors__list"></div>
-                  <div class="colors__list"></div>
-                </label>
-              </li>
-            </ul>
-          </div>
-          <div class="fonts">
-            <h3>Fuentes</h3>
-            <ul>
-              <li>
-                <label for="fonts" class="fonts">
-                  <input type="radio" id="fonts" value="cold" name="fonts">
-                  <p class="font-ubuntu">Ubuntu</p>
-                </label>
-              </li>
-              <li>
-                <label for="fonts" class="fonts">
-                  <input type="radio" id="fonts" value="warm" name="fonts">
-                  <p class="font-comic">Comic Sans</p>
-                </label>
-              </li>
-              <li>
-                <label for="fonts" class="fonts">
-                  <input type="radio" id="fonts" value="formal" name="fonts">
-                  <p class="font-monserrat">Monserrat</p>
-                </label>
-              </li>
-            </ul>
-          </div>
-        </fieldset>
-        <fieldset>
-          <div>
-            <img src="" alt="icon-rellena">
-            <h2>Rellena</h2>
-            <div>flecha</div>
-          </div>
-          <div>
-            <label for="name">Nombre completo</label>
-            <input type="text" name="name" id="name" placeholder="Ej: Sally Jill">
-          </div>
-          <div>
-            <label for="puesto">Puesto</label>
-            <input type="text" name="puesto" id="puesto" placeholder="Ej: Front-end unicorn">
-          </div>
-          <div>
-            <button>Añadir Imagen</button>
-            <div></div>
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Ej: sally-hill@gmail.com">
-          </div>
-          <div>
-            <label for="phone">Teléfono</label>
-            <input type="tel" id="phone" name="phone" placeholder="Ej: 555-55-55-55">
-          </div>
-          <div>
-            <label for="linkedin">Linkedin</label>
-            <input type="" name="linkedin" id="linkedin" placeholder="Ej: linkedin.com/in/sally.hill">
-          </div>
-          <div>
-            <label for="github">Github</label>
-            <input type="" name="github" id="github" placeholder="Ej: @sally-hill">
-          </div>
-          <div>
-            <p>Habilidades(máximo 3)</p>
-          </div>
-            <div>
-            <label for="html">
-            <input id="html" type="checkbox" value="" name="html">
-                HTML
-            </label>
-          </div>
-          <div>
-              <label for="css">
-              <input id="css" type="checkbox" value="" name="css">
-                  CSS
-              </label>
+      <div class="section-form__fieldset-container section-form__fieldset-container--design">
+        <fieldset class="section-form__subsection">
+          <div class="collapsible">
+            <div class="collapsible__clickable">
+              <img src="" alt="icon-diseño" class="collapsible__icon">
+              <h2>Diseña</h2>
+              <div>flecha</div>
             </div>
-            <div>
-                <label for="react">
-                <input id="react" type="checkbox" value="" name="react">
-                    React
-                </label>
+            <div class="collapsible__content">
+              <div class="colors">
+                <h3>Colores</h3>
+                <ul>
+                  <li>
+                    <label for="colors" class="colors">
+                      <input type="radio" id="colors" value="cold" name="colors">
+                      <div class="colors__list"></div>
+                      <div class="colors__list"></div>
+                      <div class="colors__list"></div>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="colors" class="colors">
+                      <input type="radio" id="colors" value="warm" name="colors">
+                      <div class="colors__list"></div>
+                      <div class="colors__list"></div>
+                      <div class="colors__list"></div>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="colors" class="colors">
+                      <input type="radio" id="colors" value="formal" name="colors">
+                      <div class="colors__list"></div>
+                      <div class="colors__list"></div>
+                      <div class="colors__list"></div>
+                    </label>
+                  </li>
+                </ul>
               </div>
+              <div class="fonts">
+                <h3>Fuentes</h3>
+                <ul>
+                  <li>
+                    <label for="fonts" class="fonts">
+                      <input type="radio" id="fonts" value="cold" name="fonts">
+                      <p class="font-ubuntu">Ubuntu</p>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="fonts" class="fonts">
+                      <input type="radio" id="fonts" value="warm" name="fonts">
+                      <p class="font-comic">Comic Sans</p>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="fonts" class="fonts">
+                      <input type="radio" id="fonts" value="formal" name="fonts">
+                      <p class="font-monserrat">Monserrat</p>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </fieldset>
         <fieldset>
-            <div>
-                <img src="" alt="icon-comparte">
-                <h2>Comparte</h2>
-                <div>flecha</div>
+          <div class="collapsible">
+            <div class="collapsible__clickable">
+              <img src="" alt="icon-rellena">
+              <h2>Rellena</h2>
+              <div>flecha</div>
+            </div>
+            <div class="collapsible__content">
+              <div>
+                <label for="name">Nombre completo</label>
+                <input type="text" name="name" id="name" placeholder="Ej: Sally Jill">
               </div>
+              <div>
+                <label for="puesto">Puesto</label>
+                <input type="text" name="puesto" id="puesto" placeholder="Ej: Front-end unicorn">
+              </div>
+              <div>
+                <button>Añadir Imagen</button>
+                <div></div>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Ej: sally-hill@gmail.com">
+              </div>
+              <div>
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone" placeholder="Ej: 555-55-55-55">
+              </div>
+              <div>
+                <label for="linkedin">Linkedin</label>
+                <input type="" name="linkedin" id="linkedin" placeholder="Ej: linkedin.com/in/sally.hill">
+              </div>
+              <div>
+                <label for="github">Github</label>
+                <input type="" name="github" id="github" placeholder="Ej: @sally-hill">
+              </div>
+              <div>
+                <p>Habilidades(máximo 3)</p>
+              </div>
+              <div>
+                <label for="html">
+                  <input id="html" type="checkbox" value="" name="html">
+                  HTML
+                </label>
+              </div>
+              <div>
+                <label for="css">
+                  <input id="css" type="checkbox" value="" name="css">
+                  CSS
+                </label>
+              </div>
+              <div>
+                <label for="react">
+                  <input id="react" type="checkbox" value="" name="react">
+                  React
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="collapsible">
+            <div class="collapsible__clickable">
+              <img src="" alt="icon-comparte">
+              <h2>Comparte</h2>
+              <div>flecha</div>
+            </div>
+            <div class="collapsible__content">
+              <button><img src="">Crear tarjeta</button>
+            </div>
+          </div>
         </fieldset>
       </div>
     </form>

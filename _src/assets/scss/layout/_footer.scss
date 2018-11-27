@@ -1,12 +1,22 @@
 .page__footer {
-    border-top: 1px $color-white-two;
+    background-color:$color-white;
+    border-top: 1px solid $color-white-two;
     margin: 0;
-    padding: 0;
+    padding: 0 28px 20px;
+    @media all and (min-width: 768px) {
+        padding: 10px 40px; 
+    }
 }
 .footer__container {
     margin: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+@media all and (min-width: 768px){
+    flex-direction: row;
+    justify-content: space-between;
+    }
 }
 .footer__logo {
     width: 103px;
@@ -17,5 +27,4 @@
     color: $color-brownish-grey;
     font-size: 14px;
     line-height: 20px;
-
 }

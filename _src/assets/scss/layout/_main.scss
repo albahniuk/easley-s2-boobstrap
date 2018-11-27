@@ -4,14 +4,25 @@ body {
 .page {
     min-height: 100vh;
     background-color: $color-white-three;
-    padding: 0 28px;
+    
 }
 
 .main {
+    padding: 0 28px;
     min-height: 458px;
+    @media all and (min-width: 768px){
+        min-height: 963px;
+    }
 }
+
 .main__container {
     text-align: center;
+    @media all and (min-width: 758px){
+        display: flex;
+        flex-direction: column;
+        max-width: 419px;
+        margin: 0 auto;
+    }
 }
 .main__icons {
     display: grid;
@@ -31,6 +42,12 @@ body {
     font-family: $font-family-merri;
     font-weight: 900;
     text-align: center;
+    padding: 0;
+    @media all and (min-width: 768px){
+        font-size: 24px;
+        padding: 0 70px;
+        margin: 0; 
+    }
 }
 
 .main__subtitle {
@@ -38,6 +55,12 @@ body {
     font-size: 13px;
     font-family: $font-family-open;
     text-align: center;
+    @media all and (min-width: 768px){
+        padding: 0 44px;
+        font-size: 16px;
+        margin: 4px auto 21px; 
+
+    }
 }
 
 .main__item {
@@ -58,6 +81,12 @@ body {
     border-radius: 21px;
     border: 0px;
     margin: 39px auto 30px;
+    cursor:pointer;
+    @media all and (min-width: 768px){
+        align-self: flex-end;
+        margin-bottom: 0 0 59px;
+    }
+
 }
 
 .icon {

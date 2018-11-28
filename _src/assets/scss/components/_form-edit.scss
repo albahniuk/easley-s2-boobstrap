@@ -105,6 +105,23 @@ fieldset {
 
 
 // RELLENA SECTION
+.collapsible__content-form{
+}
+.form-label{
+    display: block;
+    margin-bottom: 6px;
+
+}
+.form-input{
+    display: block;
+    margin-bottom: 20px;
+    width: 281px;
+    height: 30px;
+    border: 1px solid $color-hospital-green;
+
+   
+
+}
 .btn--img{
     background: $color-dull-orange;
     width: 140px;
@@ -116,12 +133,16 @@ fieldset {
     font-size: 14px;
     line-height: 20px;
 }
+.container__btn-img{
+    
+}
 .subirArchivo{
-    border: 1px solid greenyellow;
+    border: 1px solid  $color-hospital-green;
     width: 30px;
     height: 30px;
 
 }
+
 
 
 

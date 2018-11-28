@@ -105,6 +105,23 @@ fieldset {
 
 
 // RELLENA SECTION
+.btn--img{
+    background: $color-dull-orange;
+    width: 140px;
+    height: 30px;
+    border-radius: 3px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    color: $color-white;
+    font-family: $font-family-opensans;
+    font-size: 14px;
+    line-height: 20px;
+}
+.subirArchivo{
+    border: 1px solid greenyellow;
+    width: 30px;
+    height: 30px;
+
+}
 
 
 

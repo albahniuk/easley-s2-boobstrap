@@ -80,10 +80,15 @@ body {
     font-weight: 600;
     text-align: center;
     background-color: $color-dirty-blue;
-    padding: 10px 20px;
+    text-transform: uppercase;
+    width: 129px;
+    height: 42px;
     border-radius: 21px;
     border: 0px;
     margin: 39px auto 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     cursor:pointer;
     @media all and (min-width: 768px){
         position: absolute;
@@ -93,6 +98,10 @@ body {
         margin: 0;
     }
 
+}
+
+.link__other{
+    text-decoration: none;
 }
 
 .icon {

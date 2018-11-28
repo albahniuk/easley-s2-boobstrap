@@ -48,7 +48,6 @@
     display: flex;
     list-style: none;
     padding: 10px auto 10px 20px;
-
 }
 
 .social-media__icon {
@@ -56,9 +55,11 @@
     height: 32px;
     border-radius: 16px;
     border: 2px solid $color-hospital-green;
-    text-align: center;
     color: $color-dark-green-blue;
-    margin: 0;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .skills__list {

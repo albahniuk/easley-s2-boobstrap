@@ -3,15 +3,19 @@ body {
 }
 .page {
     min-height: 100vh;
-    background-color: $color-white-three;
+    display:flex;
+    flex-direction: column;
     
 }
 
 .main {
     padding: 0 28px;
     min-height: 458px;
+    flex-grow: 1;
+    background-color: $color-white-three;
     @media all and (min-width: 768px){
-        min-height: 963px;
+        position: relative;
+        min-height: 600px;
     }
 }
 
@@ -82,8 +86,11 @@ body {
     margin: 39px auto 30px;
     cursor:pointer;
     @media all and (min-width: 768px){
-        align-self: flex-end;
-        margin: 189px auto 59px;
+        position: absolute;
+        left: 50%;
+        bottom: 59px;
+        transform: translateX(-50%);
+        margin: 0;
     }
 
 }

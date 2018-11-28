@@ -2,13 +2,28 @@
     display: block;
     text-align: center;
     padding: 94px 35px 35px;
+    // @media all and (min-width: 768px){
+    //     padding: 348px 175px 31px;
+    // }
+}
+
+.image__logo {
     @media all and (min-width: 768px){
-        padding: 348px 175px 31px;
+        position: relative;
+        min-height: 100px;
+        // padding: 34px 15px 34px;
     }
 }
 
 .logo {
     width: 250px;
+    @media all and (min-width: 768px){
+    position: absolute;
+    left:50%;
+    bottom: 31px;
+    transform: translateX(-50%);
+    }
+   
 }
 
 @media all and (min-width: 768px) {

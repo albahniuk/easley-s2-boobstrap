@@ -90,6 +90,10 @@ body {
     justify-content: center;
     align-items: center;
     cursor:pointer;
+    transition: box-shadow ease .7s;
+        &:hover{
+            box-shadow: 10px 10px 20px #b8b8b9;
+        }
     @media all and (min-width: 768px){
         position: absolute;
         left: 50%;

@@ -14,6 +14,8 @@ puestoField.addEventListener('keyup', (e)=>{
   puestoCard.innerHTML = autor.value;
 });
 
+
+
 //Subir fichero
 // const fr = new FileReader(); 
 // const imageBtn = document.querySelector('.btn--img');

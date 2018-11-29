@@ -16,22 +16,22 @@ puestoField.addEventListener('keyup', (e)=>{
 
 
 
-//Subir fichero
-// const fr = new FileReader(); 
-// const imageBtn = document.querySelector('.btn--img');
+// Subir fichero
+const fr = new FileReader(); 
+const imageBtn = document.querySelector('.btn--img');
 
-// const fileField = document.querySelector('#img-selector');
-// const profileImage = document.querySelector('.profile-image__item');
+const fileField = document.querySelector('#img-selector');
+const profileImage = document.querySelector('.profile-pic');
 
-// function getImage(e){
-//   const myFile = e.currentTarget.files[0];
-//   fr.addEventListener('load', writeImage);
-//   fr.readAsDataURL(myFile);
-// }
+function getImage(e){
+  const myFile = e.currentTarget.files[0];
+  fr.addEventListener('load', writeImage);
+  fr.readAsDataURL(myFile);
+}
 
-// function writeImage() {
-//   profileImage.src= fr.result;
-// }
+function writeImage() {
+  profileImage.src= fr.result;
+}
 
 // function fakeFileClick() {
 //   fileField.click(); 

@@ -33,9 +33,9 @@ function writeImage() {
   profileImage.src= fr.result;
 }
 
-// function fakeFileClick() {
-//   fileField.click(); 
-// }
+function fakeFileClick() {
+  fileField.click(); 
+}
 
-// fileField.addEventListener('change', getImage);
-// imageBtn.addEventListener('click', fakeFileClick);
+fileField.addEventListener('change', getImage);
+btn--img.addEventListener('click', fakeFileClick);

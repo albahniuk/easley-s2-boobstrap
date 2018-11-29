@@ -1,6 +1,6 @@
 .h2 {
     margin-left: 10px;
-    font-family: $font-family-opensans; 
+    font-family: $font-family-open; 
     font-size: 18px;
     font-weight: 600;
     color: $color-gunmetal;
@@ -61,7 +61,7 @@ fieldset {
 .h3 {
     font-size: 14px;
     color: $color-gunmetal;
-    font-family: $font-family-opensans; 
+    font-family: $font-family-open; 
     text-transform: uppercase;
 }
 
@@ -80,7 +80,7 @@ fieldset {
 }
 
 .font-ubuntu {
-    font-family: $font-family-ubuntu;
+    font-family: $font-family-ubu;
     font-size: 16px;
     margin: 0;
     margin-right: 30px;
@@ -93,7 +93,7 @@ fieldset {
 }
 
 .font-monserrat {
-    font-family: $font-family-monserrat;
+    font-family: $font-family-mont;
     font-size: 16px;
     margin: 0;
 }
@@ -107,7 +107,7 @@ fieldset {
 // RELLENA SECTION
 .collapsible__content-form{
     color: $color-dark-green-blue;
-    font-family: $font-family-opensans; 
+    font-family: $font-family-open; 
 }
 .form-label{
     display: block;
@@ -132,7 +132,7 @@ fieldset {
     border-radius: 3px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
     color: $color-white;
-    font-family: $font-family-opensans;
+    font-family: $font-family-open;
     font-size: 14px;
     line-height: 20px;
 }
@@ -150,7 +150,7 @@ fieldset {
 }
 .skill__three{
     color: $color-dark-green-blue;
-    font-family: $font-family-opensans;
+    font-family: $font-family-open;
 }
 
 
@@ -167,7 +167,7 @@ fieldset {
     border: none;
     font-size: 18px;
     font-weight: 600;
-    font-family: $font-family-opensans;
+    font-family: $font-family-open;
     color: $color-white;
     text-transform: uppercase;
     display: flex;

@@ -1,3 +1,10 @@
 'use strict';
+const nameField = document.querySelector('#name');
+const nameCard = document.querySelector('.h1-description');
+nameField.addEventListener('keyup', function(e){
 
-console.log('>> Ready :)');
+  const preview = e.currentTarget;
+
+  nameCard.innerHTML = preview.value;
+
+});

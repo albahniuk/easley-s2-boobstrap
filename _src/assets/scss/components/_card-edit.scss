@@ -1,0 +1,81 @@
+.section__card {
+    background: linear-gradient(to bottom, $color-silver, $color-pale-grey);
+    height: 457px;
+    padding: 10px 35px 30px 45px;   
+}
+
+.reset {
+    border-radius: 15px;
+    width: 75px;
+    height: 30px;
+    border: 1px solid $color-white;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: $font-family-open;
+    color: $color-gunmetal;
+    margin-bottom: 20px;
+}
+
+.icon-reset {
+    margin-right: 10px;
+}
+
+.section__card-content {
+    border-radius: 2px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+    background-color: $color-white;
+}
+
+.description {
+    padding: 20px 14px 10px 20px;
+}
+
+.h1-description {
+    font-size: 18px;
+    color: $color-dark-green-blue;
+    font-family: "Comic Sans MS", "Chilanka", "Gaegu", sans-serif; 
+    font-weight: 700;
+}
+
+.text-description {
+    font-size: 16px;
+    color: $color-gunmetal;
+    font-family: "Comic Sans MS", "Chilanka", "Gaegu", sans-serif; 
+}
+
+.social-media__list {
+    display: flex;
+    list-style: none;
+    padding: 10px auto 10px 20px;
+}
+
+.social-media__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    border: 2px solid $color-hospital-green;
+    color: $color-dark-green-blue;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills__list {
+    display: flex;
+    list-style: none;
+    border-top: 2px solid $color-dirty-blue;
+}
+
+.skill {
+    border-radius: 4px;
+    background-color: $color-dirty-blue;
+    color: $color-white;
+    font-size: 13px;
+    font-family: $font-family-open;
+    text-transform: uppercase;
+    padding: 0 4px;
+    margin: 10px;
+}
+

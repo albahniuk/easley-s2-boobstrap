@@ -21,7 +21,7 @@ const fr = new FileReader();
 const imageBtn = document.querySelector('.btn--img');
 
 const fileField = document.querySelector('#img-selector');
-const profileImage = document.querySelector('.profile-pic2');
+const profileImage = document.querySelector('.profile-pic');
 
 //let files = [];
 

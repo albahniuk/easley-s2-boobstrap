@@ -82,3 +82,10 @@
 #img-selector{
     display: none;
 }
+
+.profile-pic{
+    width: 240px;
+    height: 200px;
+    background: url('https://via.placeholder.com/240x200') center center no-repeat;
+    background-size: cover;
+}

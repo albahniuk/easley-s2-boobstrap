@@ -16,12 +16,14 @@ puestoField.addEventListener('keyup', (e)=>{
 
 
 
-// Subir fichero
+// Subir fichero imagen
 const fr = new FileReader(); 
 const imageBtn = document.querySelector('.btn--img');
 
 const fileField = document.querySelector('#img-selector');
-const profileImage = document.querySelector('.profile-pic');
+const profileImage = document.querySelector('.profile-pic2');
+
+//let files = [];
 
 function getImage(e){
   const myFile = e.currentTarget.files[0];
@@ -33,9 +35,10 @@ function writeImage() {
   profileImage.src= fr.result;
 }
 
+
 function fakeFileClick() {
   fileField.click(); 
 }
-
+imageBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
-btn--img.addEventListener('click', fakeFileClick);
+

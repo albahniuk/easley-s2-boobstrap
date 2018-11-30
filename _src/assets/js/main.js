@@ -22,6 +22,7 @@ const imageBtn = document.querySelector('.btn--img');
 
 const fileField = document.querySelector('#img-selector');
 const profileImage = document.querySelector('.profile-pic');
+const divPreviewImage = document.querySelector('.subirArchivo');
 
 //let files = [];
 
@@ -33,6 +34,7 @@ function getImage(e){
 
 function writeImage() {
 profileImage.style.backgroundImage = `url(${fr.result})`;
+divPreviewImage.style.backgroundImage = `url(${fr.result})`;
 }
 
 function fakeFileClick() {

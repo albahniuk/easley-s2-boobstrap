@@ -32,13 +32,13 @@ function getImage(e){
 }
 
 function writeImage() {
-  profileImage.src= fr.result;
+profileImage.style.backgroundImage = `url(${fr.result})`;
 }
-
 
 function fakeFileClick() {
   fileField.click(); 
 }
+
 imageBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
 

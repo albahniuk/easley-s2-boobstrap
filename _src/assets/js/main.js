@@ -3,7 +3,8 @@ const nameField = document.querySelector('#name');
 const puestoField = document.querySelector('#puesto');
 const nameCard = document.querySelector('.h1-description');
 const puestoCard = document.querySelector('.text-description');
-
+const phoneField = document.querySelector ('.contact-list__tlf');
+const phoneCard = document.querySelector ('#phone');
 nameField.addEventListener('keyup', function(e){
   const preview = e.currentTarget;
   nameCard.innerHTML = preview.value;
@@ -43,4 +44,9 @@ function fakeFileClick() {
 
 imageBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
+
+//Links
+
+
+
 

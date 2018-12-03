@@ -44,3 +44,35 @@ function fakeFileClick() {
 imageBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
 
+//aplicamos las paletas
+
+const cardContent = document.querySelector('.section__card-content');
+const orangePalette = document.querySelector('.orange-palette');
+const porDefecto = document.querySelector('.default');
+const orange = document.querySelector('.orange');
+const blue = document.querySelector('.blue');
+
+function colorClickO (e){
+  const palette = e.target;
+    cardContent.classList.add('orange-palette');
+    cardContent.classList.remove('default-palette');
+    cardContent.classList.remove('blue-patette');
+}
+orange.addEventListener('click', colorClickO);
+
+function colorClickD (e){
+  const palette = e.target;
+    cardContent.classList.remove('orange-palette');
+    cardContent.classList.add('default-palette');
+    cardContent.classList.remove('blue-patette');
+}
+
+porDefecto.addEventListener('click', colorClickD);
+
+function colorClickB (e){
+  const palette = e.target;
+    cardContent.classList.remove('orange-palette');
+    cardContent.classList.remove('default-palette');
+    cardContent.classList.add('blue-patette');
+}
+blue.addEventListener('click', colorClickB);

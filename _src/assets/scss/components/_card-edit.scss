@@ -29,6 +29,7 @@
 
 .description {
     padding: 20px 14px 10px 20px;
+    position: relative;
 }
 
 .h1-description {
@@ -36,12 +37,14 @@
     color: $color-dark-green-blue;
     font-family: "Comic Sans MS", "Chilanka", "Gaegu", sans-serif; 
     font-weight: 700;
+    margin: 0;
 }
 
 .text-description {
     font-size: 16px;
     color: $color-gunmetal;
     font-family: "Comic Sans MS", "Chilanka", "Gaegu", sans-serif; 
+    margin: 0;
 }
 
 .social-media__list {
@@ -88,4 +91,13 @@
     height: 200px;
     background: url('https://via.placeholder.com/240x200') center center no-repeat;
     background-size: cover;
+}
+
+.rectangle {
+    width: 5px;
+    height: 42px;
+    background-color: $color-hospital-green;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
 }

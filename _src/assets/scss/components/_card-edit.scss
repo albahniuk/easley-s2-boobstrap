@@ -107,7 +107,7 @@
         background-color: $color-tomato;
     }
     .social-media__icon {
-        border: $color-tomato;
+        border: 2px solid $color-tomato;
         color: $color-dried-blood;
     }
     .skill {
@@ -115,5 +115,21 @@
     }
     .h1-description {
         color: $color-dried-blood;
+    }
+}
+
+.blue-palette {
+    .rectangle{
+        background-color: $color-light-grey-blue;
+    }
+    .social-media__icon {
+        border: 2px solid $color-light-grey-blue;
+        color: $color-slate;
+    }
+    .skill {
+        background-color: $color-pale-grey-two;
+    }
+    .h1-description {
+        color: $color-slate;
     }
 }

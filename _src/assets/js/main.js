@@ -73,6 +73,6 @@ function colorClickB (e){
   const palette = e.target;
     cardContent.classList.remove('orange-palette');
     cardContent.classList.remove('default-palette');
-    cardContent.classList.add('blue-patette');
+    cardContent.classList.add('blue-palette');
 }
 blue.addEventListener('click', colorClickB);

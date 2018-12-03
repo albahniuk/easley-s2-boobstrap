@@ -101,3 +101,16 @@
     left: 0;
     bottom: 10px;
 }
+
+.orange-palette {
+    .rectangle{
+        background-color: $color-tomato;
+    }
+    .social-media__icon {
+        border: $color-tomato;
+        color: $color-dried-blood;
+    }
+    .skill {
+        background-color: $color-rusty-red;
+    }
+}

@@ -3,8 +3,9 @@ const nameField = document.querySelector('#name');
 const puestoField = document.querySelector('#puesto');
 const nameCard = document.querySelector('.h1-description');
 const puestoCard = document.querySelector('.text-description');
-const phoneField = document.querySelector ('.contact-list__tlf');
-const phoneCard = document.querySelector ('#phone');
+const phoneField = document.querySelector ('#phone');
+const phoneCard = document.querySelector ('.contact-list__tlf');
+
 nameField.addEventListener('keyup', function(e){
   const preview = e.currentTarget;
   nameCard.innerHTML = preview.value;
@@ -47,6 +48,12 @@ fileField.addEventListener('change', getImage);
 
 //Links
 
-
-
+// phoneField.addEventListener('keyup', function(e){
+//   const preview = e.currentTarget;
+//   nameCard.innerHTML = preview.value;
+// });
+function createLink (e){
+  const text = e.currentTarget.value;
+  const item = `<a href="${e.currentTarget.getAtributte" `
+}
 

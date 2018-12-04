@@ -46,3 +46,15 @@ function fakeFileClick() {
 imageBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
 
+//Links
+
+// phoneField.addEventListener('keyup', function(e){
+//   const preview = e.currentTarget;
+//   nameCard.innerHTML = preview.value;
+// });
+function createLink (e){
+  const text = e.currentTarget.value;
+  const item = `<a href="${e.currentTarget.getAtributte('data-common')+ text}" class= "link ${e.currentTarget.getAtributte('data-class')}"></a>`;
+  
+}
+

@@ -22,7 +22,7 @@ const imageBtn = document.querySelector('.btn--img');
 
 const fileField = document.querySelector('#img-selector');
 const profileImage = document.querySelector('.profile-pic');
-const divPreviewImage = document.querySelector('.subirArchivo');
+const divPreviewImage = document.querySelector('.uploadFile');
 
 //let files = [];
 

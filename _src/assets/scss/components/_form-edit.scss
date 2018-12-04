@@ -1,4 +1,4 @@
-.h2 {
+.title__collapsible {
     margin-left: 10px;
     font-family: $font-family-open; 
     font-size: 18px;
@@ -7,7 +7,7 @@
     text-transform: uppercase;
 }
 
-.h2-icon {
+.title-icon {
     color: $color-dull-orange;
 }
 
@@ -58,7 +58,7 @@ fieldset {
     align-items: center;
 }
 
-.h3 {
+.subtitle__collapsible {
     font-size: 14px;
     color: $color-gunmetal;
     font-family: $font-family-open; 
@@ -136,10 +136,8 @@ fieldset {
     font-size: 14px;
     line-height: 20px;
 }
-.container__btn-img{
-    
-}
-.subirArchivo{
+
+.uploadFile {
     border: 1px solid  $color-hospital-green;
     width: 30px;
     height: 30px;

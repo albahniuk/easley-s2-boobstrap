@@ -19,7 +19,7 @@ fieldset {
 
 .collapsible {
     border-bottom: 1px solid $color-white-two;
-    margin: 27px 20px 30px 20px;
+    margin: 27px 20px 0px 20px;
     min-width: auto;
 }
 
@@ -75,21 +75,26 @@ fieldset {
 }
 
 .fonts___list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     text-decoration: none;
     list-style: none;
+    align-items: baseline;
+    height: 120px;
 }
 
 .font-ubuntu {
     font-family: $font-family-ubu;
     font-size: 16px;
     margin: 0;
-    margin-right: 30px;
 }
 
 .font-comic {
     font-family: $font-family-comic; 
     font-size: 16px;
     margin: 0;
+
 }
 
 .font-monserrat {

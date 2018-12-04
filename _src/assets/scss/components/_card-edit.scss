@@ -35,7 +35,7 @@
 .h1-description {
     font-size: 18px;
     color: $color-dark-green-blue;
-    font-family: "Comic Sans MS", "Chilanka", "Gaegu", sans-serif; 
+    font-family: $font-family-comic; 
     font-weight: 700;
     margin: 0;
 }
@@ -43,7 +43,7 @@
 .text-description {
     font-size: 16px;
     color: $color-gunmetal;
-    font-family: "Comic Sans MS", "Chilanka", "Gaegu", sans-serif; 
+    font-family: $font-family-comic; 
     margin: 0;
 }
 

@@ -56,7 +56,7 @@ function colorClickO (e){
   const palette = e.target;
     cardContent.classList.add('orange-palette');
     cardContent.classList.remove('default-palette');
-    cardContent.classList.remove('blue-patette');
+    cardContent.classList.remove('blue-palette');
 }
 orange.addEventListener('click', colorClickO);
 
@@ -64,7 +64,7 @@ function colorClickD (e){
   const palette = e.target;
     cardContent.classList.remove('orange-palette');
     cardContent.classList.add('default-palette');
-    cardContent.classList.remove('blue-patette');
+    cardContent.classList.remove('blue-palette');
 }
 
 porDefecto.addEventListener('click', colorClickD);

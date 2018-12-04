@@ -48,13 +48,14 @@ fileField.addEventListener('change', getImage);
 
 //Links
 
-// phoneField.addEventListener('keyup', function(e){
-//   const preview = e.currentTarget;
-//   nameCard.innerHTML = preview.value;
-// });
-function createLink (e){
-  const text = e.currentTarget.value;
-  const item = `<a href="${e.currentTarget.getAtributte('data-common')+ text}" class= "link ${e.currentTarget.getAtributte('data-class')}"></a>`;
-  
-}
-
+phoneField.addEventListener('keyup', function(e){
+  const preview = e.currentTarget;
+  nameCard.innerHTML = preview.value;
+});
+// function createLink (e){
+//   const text = e.currentTarget.value;
+//   const item = `<a href="${e.currentTarget.getAtributte('data-common')+ text}" class= " ${e.currentTarget.getAtributte('data-class')}"></a>`;
+//   document.querySelector('.'+ e.currentTarget.getAtributte('data-dest')).innerHTML= item;
+// }
+//  phoneField.addEventListener('keyup', createLink);
+//  phoneCard.addEventListener ('keyup', createLink);

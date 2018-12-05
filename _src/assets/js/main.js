@@ -3,8 +3,7 @@ const nameField = document.querySelector('#name');
 const puestoField = document.querySelector('#puesto');
 const nameCard = document.querySelector('.h1-description');
 const puestoCard = document.querySelector('.text-description');
-const phoneField = document.querySelector ('#phone');
-const phoneCard = document.querySelector ('.contact-list__tlf');
+
 
 nameField.addEventListener('keyup', function(e){
   const preview = e.currentTarget;
@@ -47,11 +46,25 @@ imageBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
 
 //Links
+const phoneOrigin = document.querySelector ('#phone');
+const phoneDest = document.querySelector ('.contact-list__tlf');
 
-phoneField.addEventListener('keyup', function(e){
-  const preview = e.currentTarget;
-  nameCard.innerHTML = preview.value;
-});
+function writeMe(e) {
+  const tel = e.currentTarget.value;
+  const destCommon = e.currentTarget.getAttribute('data-common');
+  const destIco = e.currentTarget.getAttribute('data-ico');
+  const dataDest = e.currentTarget.getAttribute('data-dest');
+  document.querySelector(dataDest).innerHTML = `<a href="${destCommon}${tel}"><i class="${destIco}"></i></a>`;
+}
+
+phoneOrigin.addEventListener('keyup', writeMe);
+
+
+
+// phoneField.addEventListener('keyup', function(e){
+//   const preview = e.currentTarget;
+//   nameCard.innerHTML = preview.value;
+// });
 // function createLink (e){
 //   const text = e.currentTarget.value;
 //   const item = `<a href="${e.currentTarget.getAtributte('data-common')+ text}" class= " ${e.currentTarget.getAtributte('data-class')}"></a>`;
@@ -59,3 +72,4 @@ phoneField.addEventListener('keyup', function(e){
 // }
 //  phoneField.addEventListener('keyup', createLink);
 //  phoneCard.addEventListener ('keyup', createLink);
+

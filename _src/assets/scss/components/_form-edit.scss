@@ -113,18 +113,19 @@ fieldset {
 .collapsible__content-form{
     color: $color-dark-green-blue;
     font-family: $font-family-open; 
+    
 }
 
 .collapsible__upload-file {
     display: flex;
-    
+    margin-bottom: 26px;
 }
 
 .form-label{
     display: block;
     margin-bottom: 6px;
-
 }
+
 .form-input{
     display: block;
     margin-bottom: 20px;

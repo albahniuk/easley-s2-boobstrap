@@ -182,9 +182,13 @@ fieldset {
 // COMPARTE SECTION
 
 .title__collapsible-comparte {
-
+    margin: 0;
+    padding: 0;
 }
-
+.collapsible-comparte {
+    margin: 0 23px;
+    padding-top: 10px;
+}
 .collapsible__content-button {
     width: 199px;
     height: 50px;

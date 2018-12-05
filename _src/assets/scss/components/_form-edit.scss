@@ -156,18 +156,34 @@ fieldset {
     margin: 0 0 0 20px;
 
 }
-.container__skill{
+.container__skill--title{
     margin-top: 40px;
+
 }
+
 .skill__three{
     color: $color-dark-green-blue;
     font-family: $font-family-open;
 }
 
+.container__skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    
+}
 
+.form-input-c{
+    margin-bottom: 10px;
 
+}
 
 // COMPARTE SECTION
+
+.title__collapsible-comparte {
+
+}
 
 .collapsible__content-button {
     width: 199px;

@@ -68,18 +68,49 @@ mailOrigin.addEventListener('keyup', writeMe);
 linkOrigin.addEventListener('keyup', writeMe);
 gitOrigin.addEventListener('keyup', writeMe);
 
+//Skills 
+const htmlOrigin = document.querySelector('#html');
+const cssOrigin = document.querySelector('#css');
+const reactOrigin = document.querySelector('#react');
+const htmlDest = document.querySelector('.list__item--html');
+const cssDest = document.querySelector('.list__item--css');
+const reactDest = document.querySelector('.list__item--react');
+
+
+  htmlOrigin.addEventListener('click', (e)=>{
+    const author = e.currentTarget;
+    htmlDest.innerHTML = 'Html';
+  }); 
+  cssOrigin.addEventListener('click', (e)=>{
+    const author = e.currentTarget;
+    cssDest.innerHTML = 'Css';
+  }); 
+  reactOrigin.addEventListener('click', (e)=>{
+    const author = e.currentTarget;
+    reactDest.innerHTML = 'React';
+  }); 
+
+  
+// const htmlOrigin = document.querySelector('#html');
+// const cssOrigin = document.querySelector('#css');
+// const reactOrigin = document.querySelector('#react');
+// const skillDest = document.querySelector('.skills__list');
 
 
 
-// phoneField.addEventListener('keyup', function(e){
-//   const preview = e.currentTarget;
-//   nameCard.innerHTML = preview.value;
-// });
-// function createLink (e){
-//   const text = e.currentTarget.value;
-//   const item = `<a href="${e.currentTarget.getAtributte('data-common')+ text}" class= " ${e.currentTarget.getAtributte('data-class')}"></a>`;
-//   document.querySelector('.'+ e.currentTarget.getAtributte('data-dest')).innerHTML= item;
+
+// function clickMe (e){
+//   const author = e.target.value;
+//   console.log(author);
+//   // const skill = input;
+//   // console.log(skill);
+//   skillDest.innerHTML = `<li class="skill">${author}</li>`;
+
 // }
-//  phoneField.addEventListener('keyup', createLink);
-//  phoneCard.addEventListener ('keyup', createLink);
+// htmlOrigin.addEventListener('click',clickMe);
+// cssOrigin.addEventListener('click',clickMe);
+// reactOrigin.addEventListener('click',clickMe);
+
+
+
 

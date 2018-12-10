@@ -1,6 +1,6 @@
 .title__collapsible {
     margin-left: 10px;
-    font-family: $font-family-open; 
+    font-family: $font-family-open;
     font-size: 18px;
     font-weight: 600;
     color: $color-gunmetal;
@@ -61,7 +61,7 @@ fieldset {
 .subtitle__collapsible {
     font-size: 14px;
     color: $color-gunmetal;
-    font-family: $font-family-open; 
+    font-family: $font-family-open;
     text-transform: uppercase;
 }
 
@@ -91,7 +91,7 @@ fieldset {
 }
 
 .font-comic {
-    font-family: $font-family-comic; 
+    font-family: $font-family-comic;
     font-size: 16px;
     margin: 0;
 
@@ -112,8 +112,8 @@ fieldset {
 // RELLENA SECTION
 .collapsible__content-form{
     color: $color-dark-green-blue;
-    font-family: $font-family-open; 
-    
+    font-family: $font-family-open;
+
 }
 
 .collapsible__upload-file {
@@ -145,6 +145,7 @@ fieldset {
     font-family: $font-family-open;
     font-size: 14px;
     line-height: 20px;
+    border: none;
 }
 
 .uploadFile {
@@ -171,7 +172,7 @@ fieldset {
     flex-direction: column;
     justify-content: flex-start;
     align-items: baseline;
-    
+
 }
 
 .form-input-c{
@@ -207,5 +208,5 @@ fieldset {
     align-items: center;
     margin: 30px 0 30px;
     margin-left: 50%;
-    transform: translate(-50%); 
+    transform: translate(-50%);
 }

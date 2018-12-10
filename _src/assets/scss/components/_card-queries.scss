@@ -9,16 +9,26 @@
   }
 
   .section__card {
-    height: 100vh;
+    min-height: 100%;
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 50%;
+    padding: 0 45px;
+  }
+  .section-form{
+    width: 50%;
+
+  }
+  .section__card-content{
+    width: 240px;
+    align-self: center;
+  }
+  .reset{
+    margin-left: 45px;
   }
 
-  .reset {
-
-  }
 
 
 }

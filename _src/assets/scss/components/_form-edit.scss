@@ -1,3 +1,7 @@
+.section-form {
+  background-image: linear-gradient(to bottom, $color-white-three, $color-white);
+}
+
 .title__collapsible {
     margin-left: 10px;
     font-family: $font-family-open;
@@ -94,7 +98,6 @@ fieldset {
     font-family: $font-family-comic;
     font-size: 16px;
     margin: 0;
-
 }
 
 .font-monserrat {
@@ -107,13 +110,11 @@ fieldset {
     margin: 0 0 30px 24px;
 }
 
-
-
 // RELLENA SECTION
+
 .collapsible__content-form{
     color: $color-dark-green-blue;
     font-family: $font-family-open;
-
 }
 
 .collapsible__upload-file {
@@ -155,11 +156,10 @@ fieldset {
     background: center center no-repeat;
     background-size: cover;
     margin: 0 0 0 20px;
-
 }
+
 .container__skill--title{
     margin-top: 40px;
-
 }
 
 .skill__three{
@@ -172,12 +172,10 @@ fieldset {
     flex-direction: column;
     justify-content: flex-start;
     align-items: baseline;
-
 }
 
 .form-input-c{
     margin-bottom: 10px;
-
 }
 
 // COMPARTE SECTION
@@ -185,12 +183,13 @@ fieldset {
 .title__collapsible-comparte {
     margin: 0;
     padding: 0 0 0 12px;
-
 }
+
 .collapsible-comparte {
     margin: 0 23px;
     padding-top: 10px;
 }
+
 .collapsible__content-button {
     width: 199px;
     height: 50px;

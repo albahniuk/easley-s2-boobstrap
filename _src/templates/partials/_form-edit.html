@@ -6,8 +6,8 @@
           <div class="collapsible">
             <div class="collapsible__clickable">
               <div class="collapsible__clickable-title">
-                <i class="far fa-object-ungroup h2-icon"></i>
-                <h2 class="h2">Diseña</h2>
+                <i class="far fa-object-ungroup title-icon"></i>
+                <h2 class="title__collapsible">Diseña</h2>
               </div>
               <div class="collapsible__clickable-icons">
                 <i class="fas fa-angle-down icon-down"></i>
@@ -16,10 +16,10 @@
             </div>
             <div class="collapsible__content">
               <div class="colors">
-                <h3 class="h3">Colores</h3>
+                <h3 class="subtitle__collapsible">Colores</h3>
                 <ul class="themes">
                   <li>
-                    <label for="colors" class="theme">
+                    <label for="colors" class="theme default">
                       <input type="radio" id="cold" value="cold" name="colors" class="radio">
                       <div class="colors__list" style="background-color:#114e4e"></div>
                       <div class="colors__list" style="background-color:#438792;"></div>
@@ -27,7 +27,7 @@
                     </label>
                   </li>
                   <li>
-                    <label for="colors" class="theme">
+                    <label for="colors" class="theme orange">
                       <input type="radio" id="warm" value="warm" name="colors" class="radio">
                       <div class="colors__list" style="background-color: #420101"></div>
                       <div class="colors__list" style="background-color: #bd1010"></div>
@@ -35,7 +35,7 @@
                     </label>
                   </li>
                   <li>
-                    <label for="colors" class="theme">
+                    <label for="colors" class="theme blue">
                       <input type="radio" id="formal" value="formal" name="colors" class="radio">
                       <div class="colors__list" style="background-color: #3e5b65"></div>
                       <div class="colors__list" style="background-color: #dfe5eb"></div>
@@ -45,7 +45,7 @@
                 </ul>
               </div>
               <div class="fonts">
-                <h3 class="h3">Fuentes</h3>
+                <h3 class="subtitle__collapsible">Fuentes</h3>
                 <ul class="fonts___list">
                   <li>
                     <label for="fonts" class="fonts">
@@ -74,12 +74,12 @@
           <div class="collapsible">
             <div class="collapsible__clickable">
               <div class="collapsible__clickable-title">
-                <i class="far fa-keyboard h2-icon"></i>
-                <h2 class="h2">Rellena</h2>
+                <i class="far fa-keyboard title-icon"></i>
+                <h2 class="title__collapsible">Rellena</h2>
               </div>
               <div class="collapsible__clickable-icons">
-                  <i class="fas fa-angle-down icon-down"></i>
-                  <i class="fas fa-angle-up icon-up"></i>
+                <i class="fas fa-angle-down icon-down"></i>
+                <i class="fas fa-angle-up icon-up"></i>
               </div>
             </div>
             <div class="collapsible__content">
@@ -94,10 +94,12 @@
               <div class="collapsible__content-form">
                 <div class="container__btn-img">
                   <label for="imagen" class="form-label">Imagen de Perfil</label>
-                  <input type="file" id="img-selector" name="img-selector" class="action_hiddenField">
-                  <button class="btn--img" type="button">Añadir Imagen</button>
+                  <div class="collapsible__upload-file">
+                    <input type="file" id="img-selector" name="img-selector" class="action_hiddenField">
+                    <button class="btn--img" type="button">Añadir Imagen</button>
+                    <div class="uploadFile"></div>
+                  </div>
                 </div>
-                <div class="subirArchivo"></div>
               </div>
               <div class="collapsible__content-form">
                 <label for="email" class="form-label">Email</label>
@@ -115,40 +117,42 @@
                 <label for="github" class="form-label">Github</label>
                 <input type="" name="github" id="github" placeholder="Ej: @sally-hill" class="form-input">
               </div>
-              <div class="container__skill">
-                <p class="skill__three">Habilidades(máximo 3)</p>
+              <div class="container__skill--title">
+                <p class="skill__three">Habilidades (máximo 3)</p>
               </div>
-              <div class="collapsible__content-form">
-                <label for="html">
-                  <input id="html" type="checkbox" value="" name="html" class="form-input">
-                  HTML
-                </label>
-              </div>
-              <div class="collapsible__content-form">
-                <label for="css">
-                  <input id="css" type="checkbox" value="" name="css" class="form-input">
-                  CSS
-                </label>
-              </div>
-              <div class="collapsible__content-form">
-                <label for="react">
-                  <input id="react" type="checkbox" value="" name="react" class="form-input">
-                  React
-                </label>
+              <div class="container__skills">
+                <div class="collapsible__content-form">
+                  <label for="html">
+                    <input id="html" type="checkbox" value="" name="html" class="form-input-c">
+                    HTML
+                  </label>
+                </div>
+                <div class="collapsible__content-form">
+                  <label for="css">
+                    <input id="css" type="checkbox" value="" name="css" class="form-input-c">
+                    CSS
+                  </label>
+                </div>
+                <div class="collapsible__content-form">
+                  <label for="react">
+                    <input id="react" type="checkbox" value="" name="react" class="form-input-c">
+                    React
+                  </label>
+                </div>
               </div>
             </div>
           </div>
         </fieldset>
         <fieldset>
-          <div class="collapsible">
+          <div class="collapsible-comparte">
             <div class="collapsible__clickable">
               <div class="collapsible__clickable-title">
-                <i class="fas fa-share-alt h2-icon"></i>
-                <h2 class="h2">Comparte</h2>
+                <i class="fas fa-share-alt title-icon"></i>
+                <h2 class="title__collapsible title__collapsible-comparte">Comparte</h2>
               </div>
               <div class="collapsible__clickable-icons">
-                  <i class="fas fa-angle-down icon-down"></i>
-                  <i class="fas fa-angle-up icon-up"></i>
+                <i class="fas fa-angle-down icon-down"></i>
+                <i class="fas fa-angle-up icon-up"></i>
               </div>
             </div>
             <div class="collapsible__content">

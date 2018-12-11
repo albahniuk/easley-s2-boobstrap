@@ -1,0 +1,58 @@
+@media all and (min-width: 768px) {
+  .main-section {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding: 20px 40px;
+    background-image: linear-gradient(to bottom, $color-white-three, $color-white);
+    width: 100vw;
+  }
+
+  .section__card {
+    min-height: 100%;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 0 45px;
+  }
+
+  .section-form{
+    width: 50%;
+  }
+
+  .section__card-content{
+    width: 240px;
+  }
+
+  .section__card-button {
+    width: 240px;
+  }
+
+  .collapsible {
+    margin-left: 0;
+  }
+
+  .collapsible__content {
+    margin-left: 0;
+  }
+
+  .collapsible-comparte {
+    margin-left: 0;
+  }
+
+}
+
+
+@media all and (min-width: 1024px) {
+  .section__card {
+    width: 60%;
+  }
+
+  .section-form{
+    width: 40%;
+  }
+
+}

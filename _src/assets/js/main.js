@@ -19,7 +19,7 @@ puestoField.addEventListener('keyup', (e)=>{
 
 
 // Subir fichero imagen
-const fr = new FileReader(); 
+const fr = new FileReader();
 const imageBtn = document.querySelector('.btn--img');
 
 const fileField = document.querySelector('#img-selector');
@@ -40,7 +40,7 @@ divPreviewImage.style.backgroundImage = `url(${fr.result})`;
 }
 
 function fakeFileClick() {
-  fileField.click(); 
+  fileField.click();
 }
 
 imageBtn.addEventListener('click', fakeFileClick);
@@ -56,9 +56,9 @@ const blue = document.querySelector('.blue');
 
 function colorClickO (e){
   const palette = e.target;
-    cardContent.classList.add('orange-palette');
-    cardContent.classList.remove('default-palette');
-    cardContent.classList.remove('blue-palette');
+  cardContent.classList.add('orange-palette');
+  cardContent.classList.remove('default-palette');
+  cardContent.classList.remove('blue-palette');
 }
 orange.addEventListener('click', colorClickO);
 

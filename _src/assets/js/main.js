@@ -1,4 +1,19 @@
 'use strict';
+//Crear JSON VACIO
+
+const jason = {
+  "palette": 0,
+  "typography": 0,
+  "name": "",
+  "job": "",
+  "phone":"",
+  "email":"",
+  "linkedin": "",
+  "github": "",
+  "photo": "",
+  "skills":[]
+};
+
 const nameField = document.querySelector('#name');
 const puestoField = document.querySelector('#puesto');
 const nameCard = document.querySelector('.h1-description');
@@ -146,3 +161,4 @@ function colorClickB (e){
     cardContent.classList.add('blue-palette');
 }
 blue.addEventListener('click', colorClickB);
+

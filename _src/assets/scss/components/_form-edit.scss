@@ -1,13 +1,17 @@
-.h2 {
+.section-form {
+  background-image: linear-gradient(to bottom, $color-white-three, $color-white);
+}
+
+.title__collapsible {
     margin-left: 10px;
-    font-family: $font-family-open; 
+    font-family: $font-family-open;
     font-size: 18px;
     font-weight: 600;
     color: $color-gunmetal;
     text-transform: uppercase;
 }
 
-.h2-icon {
+.title-icon {
     color: $color-dull-orange;
 }
 
@@ -19,7 +23,7 @@ fieldset {
 
 .collapsible {
     border-bottom: 1px solid $color-white-two;
-    margin: 27px 20px 30px 20px;
+    margin: 27px 20px 0px 20px;
     min-width: auto;
 }
 
@@ -58,10 +62,10 @@ fieldset {
     align-items: center;
 }
 
-.h3 {
+.subtitle__collapsible {
     font-size: 14px;
     color: $color-gunmetal;
-    font-family: $font-family-open; 
+    font-family: $font-family-open;
     text-transform: uppercase;
 }
 
@@ -75,19 +79,23 @@ fieldset {
 }
 
 .fonts___list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     text-decoration: none;
     list-style: none;
+    align-items: baseline;
+    height: 120px;
 }
 
 .font-ubuntu {
     font-family: $font-family-ubu;
     font-size: 16px;
     margin: 0;
-    margin-right: 30px;
 }
 
 .font-comic {
-    font-family: "Comic Sans MS", "Chilanka", "Gaegu", sans-serif; 
+    font-family: $font-family-comic;
     font-size: 16px;
     margin: 0;
 }
@@ -99,21 +107,26 @@ fieldset {
 }
 
 .collapsible__content {
-    margin: 25px 0 30px 24px;
+    margin: 0 0 30px 24px;
 }
-
-
 
 // RELLENA SECTION
+
 .collapsible__content-form{
     color: $color-dark-green-blue;
-    font-family: $font-family-open; 
+    font-family: $font-family-open;
 }
+
+.collapsible__upload-file {
+    display: flex;
+    margin-bottom: 26px;
+}
+
 .form-label{
     display: block;
     margin-bottom: 6px;
-
 }
+
 .form-input{
     display: block;
     margin-bottom: 20px;
@@ -121,10 +134,8 @@ fieldset {
     height: 30px;
     border: 1px solid $color-hospital-green;
     padding-left: 9px;
-
-   
-
 }
+
 .btn--img{
     background: $color-dull-orange;
     width: 140px;
@@ -135,30 +146,49 @@ fieldset {
     font-family: $font-family-open;
     font-size: 14px;
     line-height: 20px;
+    border: none;
 }
-.container__btn-img{
-    
-}
-.subirArchivo{
+
+.uploadFile {
     border: 1px solid  $color-hospital-green;
     width: 30px;
     height: 30px;
     background: center center no-repeat;
     background-size: cover;
-
+    margin: 0 0 0 20px;
 }
-.container__skill{
+
+.container__skill--title{
     margin-top: 40px;
 }
+
 .skill__three{
     color: $color-dark-green-blue;
     font-family: $font-family-open;
 }
 
+.container__skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+}
 
-
+.form-input-c{
+    margin-bottom: 10px;
+}
 
 // COMPARTE SECTION
+
+.title__collapsible-comparte {
+    margin: 0;
+    padding: 0 0 0 12px;
+}
+
+.collapsible-comparte {
+    margin: 0 23px;
+    padding-top: 10px;
+}
 
 .collapsible__content-button {
     width: 199px;
@@ -177,5 +207,5 @@ fieldset {
     align-items: center;
     margin: 30px 0 30px;
     margin-left: 50%;
-    transform: translate(-50%); 
+    transform: translate(-50%);
 }

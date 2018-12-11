@@ -18,12 +18,12 @@ puestoField.addEventListener('keyup', (e)=>{
 
 
 // Subir fichero imagen
-const fr = new FileReader(); 
+const fr = new FileReader();
 const imageBtn = document.querySelector('.btn--img');
 
 const fileField = document.querySelector('#img-selector');
 const profileImage = document.querySelector('.profile-pic');
-const divPreviewImage = document.querySelector('.subirArchivo');
+const divPreviewImage = document.querySelector('.uploadFile');
 
 //let files = [];
 
@@ -39,7 +39,7 @@ divPreviewImage.style.backgroundImage = `url(${fr.result})`;
 }
 
 function fakeFileClick() {
-  fileField.click(); 
+  fileField.click();
 }
 
 imageBtn.addEventListener('click', fakeFileClick);
@@ -68,7 +68,7 @@ mailOrigin.addEventListener('keyup', writeMe);
 linkOrigin.addEventListener('keyup', writeMe);
 gitOrigin.addEventListener('keyup', writeMe);
 
-//Skills 
+//Skills
 const htmlOrigin = document.querySelector('#html');
 const cssOrigin = document.querySelector('#css');
 const reactOrigin = document.querySelector('#react');
@@ -80,17 +80,17 @@ const reactDest = document.querySelector('.list__item--react');
   htmlOrigin.addEventListener('click', (e)=>{
     const author = e.currentTarget;
     htmlDest.innerHTML = 'Html';
-  }); 
+  });
   cssOrigin.addEventListener('click', (e)=>{
     const author = e.currentTarget;
     cssDest.innerHTML = 'Css';
-  }); 
+  });
   reactOrigin.addEventListener('click', (e)=>{
     const author = e.currentTarget;
     reactDest.innerHTML = 'React';
-  }); 
+  });
 
-  
+
 // const htmlOrigin = document.querySelector('#html');
 // const cssOrigin = document.querySelector('#css');
 // const reactOrigin = document.querySelector('#react');
@@ -114,3 +114,35 @@ const reactDest = document.querySelector('.list__item--react');
 
 
 
+//aplicamos las paletas
+
+const cardContent = document.querySelector('.section__card-content');
+const orangePalette = document.querySelector('.orange-palette');
+const porDefecto = document.querySelector('.default');
+const orange = document.querySelector('.orange');
+const blue = document.querySelector('.blue');
+
+function colorClickO (e){
+  const palette = e.target;
+    cardContent.classList.add('orange-palette');
+    cardContent.classList.remove('default-palette');
+    cardContent.classList.remove('blue-palette');
+}
+orange.addEventListener('click', colorClickO);
+
+function colorClickD (e){
+  const palette = e.target;
+    cardContent.classList.remove('orange-palette');
+    cardContent.classList.add('default-palette');
+    cardContent.classList.remove('blue-palette');
+}
+
+porDefecto.addEventListener('click', colorClickD);
+
+function colorClickB (e){
+  const palette = e.target;
+    cardContent.classList.remove('orange-palette');
+    cardContent.classList.remove('default-palette');
+    cardContent.classList.add('blue-palette');
+}
+blue.addEventListener('click', colorClickB);

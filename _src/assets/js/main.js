@@ -23,11 +23,16 @@ const puestoCard = document.querySelector('.text-description');
 nameField.addEventListener('keyup', function(e){
   const preview = e.currentTarget;
   nameCard.innerHTML = preview.value;
+  jason.name = nameField.value;
+ // localStorage.setItem('name', name.value);
 });
+
+
 
 puestoField.addEventListener('keyup', (e)=>{
   const preview = e.currentTarget;
   puestoCard.innerHTML = preview.value;
+  jason.job = puestoField.value;
 });
 
 
@@ -51,6 +56,7 @@ function getImage(e){
 function writeImage() {
 profileImage.style.backgroundImage = `url(${fr.result})`;
 divPreviewImage.style.backgroundImage = `url(${fr.result})`;
+jason.photo = fr.result;
 }
 
 function fakeFileClick() {
@@ -76,6 +82,11 @@ function writeMe(e) {
   const destIco = e.currentTarget.getAttribute('data-ico');
   const dataDest = e.currentTarget.getAttribute('data-dest');
   document.querySelector(dataDest).innerHTML = `<a href="${destCommon}${author}"><i class="${destIco}"></i></a>`;
+  jason.phone = phoneOrigin.value;
+  jason.email = mailOrigin.value;
+  jason.linkedin = linkOrigin.value;
+  jason.github = gitOrigin.value;
+  console.log(jason);
 }
 
 phoneOrigin.addEventListener('keyup', writeMe);

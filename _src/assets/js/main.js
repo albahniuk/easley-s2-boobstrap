@@ -1,6 +1,6 @@
 'use strict';
-//Crear JSON VACIO
 
+//Crear JSON VACIO
 const jason = {
   "palette": 0,
   "typography": 0,
@@ -14,11 +14,12 @@ const jason = {
   "skills":[]
 };
 
+//NOMBRE Y PUESTO
+
 const nameField = document.querySelector('#name');
 const puestoField = document.querySelector('#puesto');
 const nameCard = document.querySelector('.h1-description');
 const puestoCard = document.querySelector('.text-description');
-
 
 nameField.addEventListener('keyup', function(e){
   const preview = e.currentTarget;
@@ -27,25 +28,19 @@ nameField.addEventListener('keyup', function(e){
  // localStorage.setItem('name', name.value);
 });
 
-
-
 puestoField.addEventListener('keyup', (e)=>{
   const preview = e.currentTarget;
   puestoCard.innerHTML = preview.value;
   jason.job = puestoField.value;
 });
 
+//IMAGEN
 
-
-// Subir fichero imagen
 const fr = new FileReader();
 const imageBtn = document.querySelector('.btn--img');
-
 const fileField = document.querySelector('#img-selector');
 const profileImage = document.querySelector('.profile-pic');
 const divPreviewImage = document.querySelector('.uploadFile');
-
-//let files = [];
 
 function getImage(e){
   const myFile = e.currentTarget.files[0];
@@ -66,7 +61,8 @@ function fakeFileClick() {
 imageBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
 
-//Links
+//LINKS MEDIA
+
 const phoneOrigin = document.querySelector ('#phone');
 const phoneDest = document.querySelector ('.contact-list__tlf');
 const mailOrigin = document.querySelector ('#email');
@@ -94,7 +90,7 @@ mailOrigin.addEventListener('keyup', writeMe);
 linkOrigin.addEventListener('keyup', writeMe);
 gitOrigin.addEventListener('keyup', writeMe);
 
-//Skills
+//SKILLS
 const skillDest = document.querySelector('.skills__list');
 
 // Llamar a la Api de las Skills
@@ -103,20 +99,17 @@ const skillsCont = document.querySelector('.container__skills');
 
 fetch(webApi)
   .then(response => response.json())
-  .then( data =>{
+  .then(data => {
     const resultSkills = data.skills;
-    for(let i =0; i<resultSkills.length;i++){
+    for (let i = 0; i < resultSkills.length; i++) {
       skillsCont.innerHTML += `<label for="${resultSkills[i]}" class= "input-skills">
       <input class="maxCheck" id="${resultSkills[i]}" type="checkbox" value="" name="${resultSkills[i]}">${resultSkills[i]}</label>`;
       const skillOrigin = document.querySelector(`#${resultSkills[i]}`);
+    }
   }
-}
-);
+  );
 
-
-
-
-//aplicamos las paletas
+//PALETAS
 
 const cardContent = document.querySelector('.section__card-content');
 // const orangePalette = document.querySelector('.orange-palette');
@@ -124,62 +117,62 @@ const porDefecto = document.querySelector('.default');
 const orange = document.querySelector('.orange');
 const blue = document.querySelector('.blue');
 
-function colorClickO (e){
+function colorClickO(e) {
   const palette = e.target;
-    cardContent.classList.add('orange-palette');
-    cardContent.classList.remove('default-palette');
-    cardContent.classList.remove('blue-palette');
-    jason.palette = orange.value;
-    console.log(jason);
+  cardContent.classList.add('orange-palette');
+  cardContent.classList.remove('default-palette');
+  cardContent.classList.remove('blue-palette');
+  jason.palette = orange.value;
+  console.log(jason);
 }
 orange.addEventListener('click', colorClickO);
 
-function colorClickD (e){
+function colorClickD(e) {
   const palette = e.target;
-    cardContent.classList.remove('orange-palette');
-    cardContent.classList.add('default-palette');
-    cardContent.classList.remove('blue-palette');
+  cardContent.classList.remove('orange-palette');
+  cardContent.classList.add('default-palette');
+  cardContent.classList.remove('blue-palette');
 }
 
 porDefecto.addEventListener('click', colorClickD);
 
-function colorClickB (e){
+function colorClickB(e) {
   const palette = e.target;
-    cardContent.classList.remove('orange-palette');
-    cardContent.classList.remove('default-palette');
-    cardContent.classList.add('blue-palette');
+  cardContent.classList.remove('orange-palette');
+  cardContent.classList.remove('default-palette');
+  cardContent.classList.add('blue-palette');
 }
 
 blue.addEventListener('click', colorClickB);
 
-//tIPOGRAFIA
+//TIPOGRAFIAS
 
 const monserrat = document.querySelector('.font-monserrat');
 const ubuntu = document.querySelector('.font-ubuntu');
 const comic = document.querySelector('.font-comic');
 
-function typoClickA (e){
+function typoClickA(e) {
   const typo = e.currentTarget;
-    cardContent.classList.add('font-monserrat');
-    cardContent.classList.remove('font-ubuntu');
-    cardContent.classList.remove('font-comic');
+  cardContent.classList.add('font-monserrat');
+  cardContent.classList.remove('font-ubuntu');
+  cardContent.classList.remove('font-comic');
 }
 monserrat.addEventListener('click', typoClickA);
 
-function typoClickB (e){
+function typoClickB(e) {
   const typo = e.currentTarget;
-    cardContent.classList.remove('font-monserrat');
-    cardContent.classList.add('font-ubuntu');
-    cardContent.classList.remove('font-comic');
-    console.log(typoClickB);
+  cardContent.classList.remove('font-monserrat');
+  cardContent.classList.add('font-ubuntu');
+  cardContent.classList.remove('font-comic');
+  console.log(typoClickB);
 }
 ubuntu.addEventListener('click', typoClickB);
 
-function typoClickC (e){
+function typoClickC(e) {
   const typo = e.currentTarget;
-    cardContent.classList.remove('font-monserrat');
-    cardContent.classList.remove('font-ubuntu');
-    cardContent.classList.add('font-comic');
+  cardContent.classList.remove('font-monserrat');
+  cardContent.classList.remove('font-ubuntu');
+  cardContent.classList.add('font-comic');
 }
 
 comic.addEventListener('click', typoClickC);

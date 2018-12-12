@@ -81,7 +81,7 @@ function writeMe(e) {
   const destCommon = e.currentTarget.getAttribute('data-common');
   const destIco = e.currentTarget.getAttribute('data-ico');
   const dataDest = e.currentTarget.getAttribute('data-dest');
-  document.querySelector(dataDest).innerHTML = `<a href="${destCommon}${author}"><i class="${destIco}"></i></a>`;
+  document.querySelector(dataDest).innerHTML = `<a class="link-media" href="${destCommon}${author}"><i class="${destIco}"></i></a>`;
   jason.phone = phoneOrigin.value;
   jason.email = mailOrigin.value;
   jason.linkedin = linkOrigin.value;

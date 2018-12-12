@@ -95,27 +95,7 @@ linkOrigin.addEventListener('keyup', writeMe);
 gitOrigin.addEventListener('keyup', writeMe);
 
 //Skills
-const htmlOrigin = document.querySelector('#html');
-const cssOrigin = document.querySelector('#css');
-const reactOrigin = document.querySelector('#react');
-const htmlDest = document.querySelector('.list__item--html');
-const cssDest = document.querySelector('.list__item--css');
-const reactDest = document.querySelector('.list__item--react');
-
-//TENEMOS QUE LLAMAR A LA API
-//   htmlOrigin.addEventListener('click', (e)=>{
-//     const author = e.currentTarget;
-//     htmlDest.innerHTML = 'Html';
-//   });
-//   cssOrigin.addEventListener('click', (e)=>{
-//     const author = e.currentTarget;
-//     cssDest.innerHTML = 'Css';
-//   });
-//   reactOrigin.addEventListener('click', (e)=>{
-//     const author = e.currentTarget;
-//     reactDest.innerHTML = 'React';
-//     // jason.skills = .value;
-// });
+const skillDest = document.querySelector('.skills__list');
 
 // Llamar a la Api de las Skills
 const webApi = 'https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json';
@@ -126,11 +106,22 @@ fetch(webApi)
   .then( data =>{
     const resultSkills = data.skills;
     for(let i =0; i<resultSkills.length;i++){
-      skillsCont.innerHTML += `<label for="">
-      <input id="" type="checkbox" value="" name="" class="form-input-c">${resultSkills[i]}</label>`;
-    }
-    }
-    );
+      skillsCont.innerHTML += `<label for="${resultSkills[i]}">
+      <input class="maxCheck" id="${resultSkills[i]}" type="checkbox" value="" name="${resultSkills[i]}" class="form-input-c">${resultSkills[i]}</label>`;
+      const skillOrigin = document.querySelector(`#${resultSkills[i]}`);
+  }
+}
+);
+
+const singleCheck = document.querySelector('.maxCheck');
+
+singleCheck.addEventListener('change', function() {
+
+  if(singleCheck.checked) {
+      this.checked = false;
+  }
+});
+
 
 
 
@@ -170,3 +161,36 @@ function colorClickB (e){
 
 blue.addEventListener('click', colorClickB);
 
+//tIPOGRAFIA
+
+// const porDefectoLetra = document.querySelector('.default');
+// const ubuntu = document.querySelector('.orange');
+// const blue = document.querySelector('.blue');
+
+// function colorClickO (e){
+//   const palette = e.target;
+//     cardContent.classList.add('orange-palette');
+//     cardContent.classList.remove('default-palette');
+//     cardContent.classList.remove('blue-palette');
+//     jason.palette = orange.value;
+//     console.log(jason);
+// }
+// orange.addEventListener('click', colorClickO);
+
+// function colorClickD (e){
+//   const palette = e.target;
+//     cardContent.classList.remove('orange-palette');
+//     cardContent.classList.add('default-palette');
+//     cardContent.classList.remove('blue-palette');
+// }
+
+// porDefecto.addEventListener('click', colorClickD);
+
+// function colorClickB (e){
+//   const palette = e.target;
+//     cardContent.classList.remove('orange-palette');
+//     cardContent.classList.remove('default-palette');
+//     cardContent.classList.add('blue-palette');
+// }
+
+// blue.addEventListener('click', colorClickB);

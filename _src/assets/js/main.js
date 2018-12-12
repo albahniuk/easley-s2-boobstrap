@@ -20,18 +20,23 @@ const nameField = document.querySelector('#name');
 const puestoField = document.querySelector('#puesto');
 const nameCard = document.querySelector('.h1-description');
 const puestoCard = document.querySelector('.text-description');
+const nameJson ='name';
+const jobJson ='job';
 
 nameField.addEventListener('keyup', function(e){
   const preview = e.currentTarget;
   nameCard.innerHTML = preview.value;
   jason.name = nameField.value;
- // localStorage.setItem('name', name.value);
+  createStorage(nameJson, nameField.value);
 });
+
+getStorage(nameJson);
 
 puestoField.addEventListener('keyup', (e)=>{
   const preview = e.currentTarget;
   puestoCard.innerHTML = preview.value;
   jason.job = puestoField.value;
+  createStorage(jobJson, puestoField.value);
 });
 
 //IMAGEN
@@ -129,7 +134,7 @@ function getStorage(key) {
 getList(webApi);
 
 const skillDest = document.querySelector('.skills__list');
-const skillOrigin = document.querySelector('.input-skills');
+const skillOrigin = document.querySelectorAll('.input-skills');
 console.dir(skillOrigin);
 
 function writeSkills(e) {

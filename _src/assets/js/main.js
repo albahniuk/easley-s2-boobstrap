@@ -103,7 +103,7 @@ const keyStorage = 'skills';
 
 function writeList(skillsCont, arraySkills) {
   for (let i = 0; i < arraySkills.length; i++) {
-    skillsCont.innerHTML += `<label for="${arraySkills[i]}" class= "input-skills"> <input class="maxCheck" id="${arraySkills[i]}" type="checkbox" value="" name="${arraySkills[i]}">${arraySkills[i]}</label>`;
+    skillsCont.innerHTML += `<label for="${arraySkills[i]}" class= "input-skills"> <input class="maxCheck" id="${arraySkills[i]}" type="checkbox"  value="" name="${arraySkills[i]}">${arraySkills[i]}</label>`;
   }
 }
 
@@ -137,13 +137,18 @@ const skillDest = document.querySelector('.skills__list');
 const skillOrigin = document.querySelectorAll('.input-skills');
 console.dir(skillOrigin);
 
-function writeSkills(e) {
-  const author = e.currentTarget.innerText;
-  console.dir(author);
-  skillDest.innerHTML = `<li class="skill list__item--html">${author}</li>`;
-}
 
-skillOrigin.addEventListener('click', writeSkills);
+for(const s of skillOrigin){
+  s.addEventListener('click', writeSkills);
+  }
+
+function writeSkills(e) {
+  for(let i= 0; i<skillOrigin.length; i++){
+    const author = e.currentTarget.innerText;
+    skillDest.innerHTML += `<li class="skill list__item--html">${author[i]}</li>`;
+    console.dir(author);
+}
+}
 
 
 //PALETAS

@@ -189,9 +189,11 @@ const monse = document.querySelector('#monserrat');
 function fontClickU (e){
   const f = e.currentTarget.value;
   console.log(f);
+
   cardContent.classList.add('font-ubuntu');
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.remove('font-comic');
+
 }
 ubuntu.addEventListener('click', fontClickU);
 

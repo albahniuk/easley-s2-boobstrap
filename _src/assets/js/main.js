@@ -104,13 +104,13 @@ function writeList(skillsCont, arraySkills) {
 
 function getList() {
   if(getStorage(keyStorage)) {
-    const arraySkills = JSON.parse(getStorage(keyStorage));
+    let arraySkills = JSON.parse(getStorage(keyStorage));
     writeList(skillsCont, arraySkills);
   } else {
     fetch(webApi)
       .then(response => response.json())
       .then(data => {
-        const arraySkills = data.skills;
+        let arraySkills = data.skills;
         writeList(skillsCont, arraySkills);
         createStorage(keyStorage, JSON.stringify(arraySkills));
       }
@@ -135,7 +135,7 @@ console.dir(skillOrigin);
 function writeSkills(e) {
   const author = e.currentTarget.innerText;
   console.dir(author);
-  skillDest.innerHTML = author;
+  skillDest.innerHTML = `<li class="skill list__item--html">${author}</li>`;
 }
 
 skillOrigin.addEventListener('click', writeSkills);

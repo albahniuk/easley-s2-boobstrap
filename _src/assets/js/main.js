@@ -135,19 +135,17 @@ getList(webApi);
 
 const skillDest = document.querySelector('.skills__list');
 const skillOrigin = document.querySelectorAll('.input-skills');
-console.dir(skillOrigin);
-
 
 for(const s of skillOrigin){
   s.addEventListener('click', writeSkills);
   }
 
 function writeSkills(e) {
-  for(let i= 0; i<skillOrigin.length; i++){
+  //for(let i= 0; i<skillOrigin.length; i++){
     const author = e.currentTarget.innerText;
-    skillDest.innerHTML += `<li class="skill list__item--html">${author[i]}</li>`;
-    console.dir(author);
-}
+    //skillDest.innerHTML += `<li class="skill list__item--html">${author[i]}</li>`;
+    console.log(author);
+//}
 }
 
 

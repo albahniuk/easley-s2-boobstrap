@@ -141,11 +141,9 @@ for(const s of skillOrigin){
   }
 
 function writeSkills(e) {
-  //for(let i= 0; i<skillOrigin.length; i++){
     const author = e.currentTarget.innerText;
-    //skillDest.innerHTML += `<li class="skill list__item--html">${author[i]}</li>`;
+    skillDest.innerHTML += `<li class="skill list__item--html">${author}</li>`;
     console.log(author);
-//}
 }
 
 

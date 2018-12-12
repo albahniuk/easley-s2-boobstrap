@@ -113,15 +113,6 @@ fetch(webApi)
 }
 );
 
-const singleCheck = document.querySelector('.maxCheck');
-
-singleCheck.addEventListener('change', function() {
-
-  if(singleCheck.checked) {
-      this.checked = false;
-  }
-});
-
 
 
 
@@ -163,34 +154,32 @@ blue.addEventListener('click', colorClickB);
 
 //tIPOGRAFIA
 
-// const porDefectoLetra = document.querySelector('.default');
-// const ubuntu = document.querySelector('.orange');
-// const blue = document.querySelector('.blue');
+const monserrat = document.querySelector('.font-monserrat');
+const ubuntu = document.querySelector('.font-ubuntu');
+const comic = document.querySelector('.font-comic');
 
-// function colorClickO (e){
-//   const palette = e.target;
-//     cardContent.classList.add('orange-palette');
-//     cardContent.classList.remove('default-palette');
-//     cardContent.classList.remove('blue-palette');
-//     jason.palette = orange.value;
-//     console.log(jason);
-// }
-// orange.addEventListener('click', colorClickO);
+function typoClickA (e){
+  const typo = e.currentTarget;
+    cardContent.classList.add('font-monserrat');
+    cardContent.classList.remove('font-ubuntu');
+    cardContent.classList.remove('font-comic');
+}
+monserrat.addEventListener('click', typoClickA);
 
-// function colorClickD (e){
-//   const palette = e.target;
-//     cardContent.classList.remove('orange-palette');
-//     cardContent.classList.add('default-palette');
-//     cardContent.classList.remove('blue-palette');
-// }
+function typoClickB (e){
+  const typo = e.currentTarget;
+    cardContent.classList.remove('font-monserrat');
+    cardContent.classList.add('font-ubuntu');
+    cardContent.classList.remove('font-comic');
+    console.log(typoClickB);
+}
+ubuntu.addEventListener('click', typoClickB);
 
-// porDefecto.addEventListener('click', colorClickD);
+function typoClickC (e){
+  const typo = e.currentTarget;
+    cardContent.classList.remove('font-monserrat');
+    cardContent.classList.remove('font-ubuntu');
+    cardContent.classList.add('font-comic');
+}
 
-// function colorClickB (e){
-//   const palette = e.target;
-//     cardContent.classList.remove('orange-palette');
-//     cardContent.classList.remove('default-palette');
-//     cardContent.classList.add('blue-palette');
-// }
-
-// blue.addEventListener('click', colorClickB);
+comic.addEventListener('click', typoClickC);

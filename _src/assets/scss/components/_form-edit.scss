@@ -50,6 +50,24 @@ fieldset {
   justify-content: space-between;
 }
 
+.ubuntu {
+  font-family: $font-family-ubu;
+  font-size: 16px;
+  margin: 0;
+}
+
+.comic {
+  font-family: $font-family-comic;
+  font-size: 16px;
+  margin: 0;
+}
+
+.monserrat {
+  font-family: $font-family-mont;
+  font-size: 16px;
+  margin: 0;
+}
+
 .radio {
     width: 17px;
     height: 17px;

@@ -36,15 +36,15 @@
 .h1-description {
     font-size: 18px;
     color: $color-dark-green-blue;
-
+    font-family: $font-family-comic;
     font-weight: 700;
     margin: 0;
 }
 
 .text-description {
     font-size: 16px;
+    font-family: $font-family-comic;
     color: $color-gunmetal;
-
     margin: 0;
 }
 
@@ -145,3 +145,31 @@
         color: $color-slate;
     }
 }
+
+.font-ubuntu {
+  .h1-description {
+    font-family: $font-family-ubu;
+  }
+  .text-description {
+    font-family: $font-family-ubu;
+  }
+}
+
+.font-comic {
+  .h1-description {
+    font-family: $font-family-comic;
+  }
+  .text-description {
+    font-family: $font-family-comic;
+  }
+}
+
+.font-monserrat {
+  .h1-description {
+    font-family: $font-family-mont;
+  }
+  .text-description {
+    font-family: $font-family-mont;
+  }
+}
+

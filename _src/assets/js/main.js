@@ -147,9 +147,9 @@ blue.addEventListener('click', colorClickB);
 
 //TIPOGRAFIAS
 
-const monserrat = document.querySelector('.font-monserrat');
-const ubuntu = document.querySelector('.font-ubuntu');
-const comic = document.querySelector('.font-comic');
+const monserrat = document.querySelector('.monserrat');
+const ubuntu = document.querySelector('.ubuntu');
+const comic = document.querySelector('.comic');
 
 function typoClickA(e) {
   const typo = e.currentTarget;

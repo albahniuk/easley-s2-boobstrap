@@ -106,8 +106,8 @@ fetch(webApi)
   .then( data =>{
     const resultSkills = data.skills;
     for(let i =0; i<resultSkills.length;i++){
-      skillsCont.innerHTML += `<label for="${resultSkills[i]}">
-      <input class="maxCheck" id="${resultSkills[i]}" type="checkbox" value="" name="${resultSkills[i]}" class="form-input-c">${resultSkills[i]}</label>`;
+      skillsCont.innerHTML += `<label for="${resultSkills[i]}" class= "input-skills">
+      <input class="maxCheck" id="${resultSkills[i]}" type="checkbox" value="" name="${resultSkills[i]}">${resultSkills[i]}</label>`;
       const skillOrigin = document.querySelector(`#${resultSkills[i]}`);
   }
 }

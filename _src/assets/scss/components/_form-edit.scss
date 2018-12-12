@@ -144,7 +144,7 @@ fieldset {
     margin-top: 40px;
 }
 
-.skill__three{
+.skills{
     color: $color-dark-green-blue;
     font-family: $font-family-open;
 }
@@ -156,8 +156,10 @@ fieldset {
     align-items: baseline;
 }
 
-.form-input-c{
+.input-skills{
     margin-bottom: 10px;
+    color: $color-dark-green-blue;
+    font-family: $font-family-open;
 }
 
 // COMPARTE SECTION

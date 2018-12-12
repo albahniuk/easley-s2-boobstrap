@@ -102,7 +102,7 @@ const htmlDest = document.querySelector('.list__item--html');
 const cssDest = document.querySelector('.list__item--css');
 const reactDest = document.querySelector('.list__item--react');
 
-
+//TENEMOS QUE LLAMAR A LA API
   htmlOrigin.addEventListener('click', (e)=>{
     const author = e.currentTarget;
     htmlDest.innerHTML = 'Html';
@@ -114,7 +114,8 @@ const reactDest = document.querySelector('.list__item--react');
   reactOrigin.addEventListener('click', (e)=>{
     const author = e.currentTarget;
     reactDest.innerHTML = 'React';
-  });
+    jason.skils = .value;
+¡  });
 
 
 // const htmlOrigin = document.querySelector('#html');
@@ -153,6 +154,8 @@ function colorClickO (e){
     cardContent.classList.add('orange-palette');
     cardContent.classList.remove('default-palette');
     cardContent.classList.remove('blue-palette');
+    jason.palette = orange.value;
+    console.log(jason);
 }
 orange.addEventListener('click', colorClickO);
 
@@ -171,5 +174,6 @@ function colorClickB (e){
     cardContent.classList.remove('default-palette');
     cardContent.classList.add('blue-palette');
 }
+
 blue.addEventListener('click', colorClickB);
 

@@ -114,8 +114,8 @@ const reactDest = document.querySelector('.list__item--react');
   reactOrigin.addEventListener('click', (e)=>{
     const author = e.currentTarget;
     reactDest.innerHTML = 'React';
-    jason.skils = .value;
-¡  });
+    // jason.skills = .value;
+});
 
 
 // const htmlOrigin = document.querySelector('#html');
@@ -144,7 +144,7 @@ const reactDest = document.querySelector('.list__item--react');
 //aplicamos las paletas
 
 const cardContent = document.querySelector('.section__card-content');
-const orangePalette = document.querySelector('.orange-palette');
+// const orangePalette = document.querySelector('.orange-palette');
 const porDefecto = document.querySelector('.default');
 const orange = document.querySelector('.orange');
 const blue = document.querySelector('.blue');

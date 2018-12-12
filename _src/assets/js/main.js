@@ -103,41 +103,34 @@ const cssDest = document.querySelector('.list__item--css');
 const reactDest = document.querySelector('.list__item--react');
 
 //TENEMOS QUE LLAMAR A LA API
-  htmlOrigin.addEventListener('click', (e)=>{
-    const author = e.currentTarget;
-    htmlDest.innerHTML = 'Html';
-  });
-  cssOrigin.addEventListener('click', (e)=>{
-    const author = e.currentTarget;
-    cssDest.innerHTML = 'Css';
-  });
-  reactOrigin.addEventListener('click', (e)=>{
-    const author = e.currentTarget;
-    reactDest.innerHTML = 'React';
-    // jason.skills = .value;
-});
+//   htmlOrigin.addEventListener('click', (e)=>{
+//     const author = e.currentTarget;
+//     htmlDest.innerHTML = 'Html';
+//   });
+//   cssOrigin.addEventListener('click', (e)=>{
+//     const author = e.currentTarget;
+//     cssDest.innerHTML = 'Css';
+//   });
+//   reactOrigin.addEventListener('click', (e)=>{
+//     const author = e.currentTarget;
+//     reactDest.innerHTML = 'React';
+//     // jason.skills = .value;
+// });
 
+// Llamar a la Api de las Skills
+const webApi = 'https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json';
+const skillsCont = document.querySelector('.container__skills');
 
-// const htmlOrigin = document.querySelector('#html');
-// const cssOrigin = document.querySelector('#css');
-// const reactOrigin = document.querySelector('#react');
-// const skillDest = document.querySelector('.skills__list');
-
-
-
-
-// function clickMe (e){
-//   const author = e.target.value;
-//   console.log(author);
-//   // const skill = input;
-//   // console.log(skill);
-//   skillDest.innerHTML = `<li class="skill">${author}</li>`;
-
-// }
-// htmlOrigin.addEventListener('click',clickMe);
-// cssOrigin.addEventListener('click',clickMe);
-// reactOrigin.addEventListener('click',clickMe);
-
+fetch(webApi)
+  .then(response => response.json())
+  .then( data =>{
+    const resultSkills = data.skills;
+    for(let i =0; i<resultSkills.length;i++){
+      skillsCont.innerHTML += `<label for="">
+      <input id="" type="checkbox" value="" name="" class="form-input-c">${resultSkills[i]}</label>`;
+    }
+    }
+    );
 
 
 

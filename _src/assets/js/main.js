@@ -94,9 +94,7 @@ gitOrigin.addEventListener('keyup', writeMe);
 // Llamar a la Api de las Skills
 const webApi = 'https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json';
 const skillsCont = document.querySelector('.container__skills');
-
 const keyStorage = 'skills';
-
 
 function writeList(skillsCont, arraySkills) {
   for (let i = 0; i < arraySkills.length; i++) {
@@ -120,7 +118,6 @@ function getList() {
   }
 }
 
-
 function createStorage(key, value) {
   localStorage.setItem(key, value);
 }
@@ -131,17 +128,17 @@ function getStorage(key) {
 
 getList(webApi);
 
-// const skillDest = document.querySelector('.skills__list');
-// const skillOrigin = document.querySelector('.input-skills');
-// console.log(skillOrigin);
+const skillDest = document.querySelector('.skills__list');
+const skillOrigin = document.querySelector('.input-skills');
+console.dir(skillOrigin);
 
-// function writeSkills(e) {
-//   const author = e.currentTarget.value;
-//   console.log(author);
+function writeSkills(e) {
+  const author = e.currentTarget.innerText;
+  console.dir(author);
+  skillDest.innerHTML = author;
+}
 
-// }
-
-// skillOrigin.addEventListener('click', writeSkills);
+skillOrigin.addEventListener('click', writeSkills);
 
 
 //PALETAS

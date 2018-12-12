@@ -11,7 +11,7 @@ const jason = {
   "linkedin": "",
   "github": "",
   "photo": "",
-  "skills":[]
+  "skills":["", "", ""]
 };
 
 //NOMBRE Y PUESTO
@@ -91,23 +91,58 @@ linkOrigin.addEventListener('keyup', writeMe);
 gitOrigin.addEventListener('keyup', writeMe);
 
 //SKILLS
-const skillDest = document.querySelector('.skills__list');
-
 // Llamar a la Api de las Skills
 const webApi = 'https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json';
 const skillsCont = document.querySelector('.container__skills');
 
-fetch(webApi)
-  .then(response => response.json())
-  .then(data => {
-    const resultSkills = data.skills;
-    for (let i = 0; i < resultSkills.length; i++) {
-      skillsCont.innerHTML += `<label for="${resultSkills[i]}" class= "input-skills">
-      <input class="maxCheck" id="${resultSkills[i]}" type="checkbox" value="" name="${resultSkills[i]}">${resultSkills[i]}</label>`;
-      const skillOrigin = document.querySelector(`#${resultSkills[i]}`);
-    }
+const keyStorage = 'skills';
+
+
+function writeList(skillsCont, arraySkills) {
+  for (let i = 0; i < arraySkills.length; i++) {
+    skillsCont.innerHTML += `<label for="${arraySkills[i]}" class= "input-skills"> <input class="maxCheck" id="${arraySkills[i]}" type="checkbox" value="" name="${arraySkills[i]}">${arraySkills[i]}</label>`;
   }
-  );
+}
+
+function getList() {
+  if(getStorage(keyStorage)) {
+    const arraySkills = JSON.parse(getStorage(keyStorage));
+    writeList(skillsCont, arraySkills);
+  } else {
+    fetch(webApi)
+      .then(response => response.json())
+      .then(data => {
+        const arraySkills = data.skills;
+        writeList(skillsCont, arraySkills);
+        createStorage(keyStorage, JSON.stringify(arraySkills));
+      }
+      );
+  }
+}
+
+
+function createStorage(key, value) {
+  localStorage.setItem(key, value);
+}
+
+function getStorage(key) {
+  return localStorage.getItem(key);
+}
+
+getList(webApi);
+
+// const skillDest = document.querySelector('.skills__list');
+// const skillOrigin = document.querySelector('.input-skills');
+// console.log(skillOrigin);
+
+// function writeSkills(e) {
+//   const author = e.currentTarget.value;
+//   console.log(author);
+
+// }
+
+// skillOrigin.addEventListener('click', writeSkills);
+
 
 //PALETAS
 
@@ -152,7 +187,7 @@ const ubuntu = document.querySelector('.ubuntu');
 const comic = document.querySelector('.comic');
 
 function typoClickA(e) {
-  const typo = e.currentTarget;
+  const typo = e.target;
   cardContent.classList.add('font-monserrat');
   cardContent.classList.remove('font-ubuntu');
   cardContent.classList.remove('font-comic');
@@ -160,7 +195,7 @@ function typoClickA(e) {
 monserrat.addEventListener('click', typoClickA);
 
 function typoClickB(e) {
-  const typo = e.currentTarget;
+  const typo = e.target;
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.add('font-ubuntu');
   cardContent.classList.remove('font-comic');
@@ -169,7 +204,7 @@ function typoClickB(e) {
 ubuntu.addEventListener('click', typoClickB);
 
 function typoClickC(e) {
-  const typo = e.currentTarget;
+  const typo = e.target;
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.remove('font-ubuntu');
   cardContent.classList.add('font-comic');

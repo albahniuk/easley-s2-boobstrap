@@ -177,3 +177,35 @@ function colorClickB (e){
 
 blue.addEventListener('click', colorClickB);
 
+
+//aplicamos las tipografias
+
+const ubuntu = document.querySelector('#ubuntu');
+const comic = document.querySelector('#comic');
+const monse = document.querySelector('#monserrat');
+
+function fontClickU (e){
+  const f = e.target;
+  cardContent.classList.add('font-ubuntu');
+  cardContent.classList.remove('font-monserrat');
+  cardContent.classList.remove('font-comic');
+}
+ubuntu.addEventListener('click', fontClickU);
+
+function fontClickM (e){
+  const f = e.target;
+  cardContent.classList.remove('font-ubuntu');
+  cardContent.classList.add('font-monserrat');
+  cardContent.classList.remove('font-comic');
+}
+
+monse.addEventListener('click', fontClickM);
+
+function fontClickC (e){
+  const f = e.target;
+  cardContent.classList.remove('font-ubuntu');
+  cardContent.classList.remove('font-monserrat');
+  cardContent.classList.add('font-comic');
+}
+
+comic.addEventListener('click', fontClickC);

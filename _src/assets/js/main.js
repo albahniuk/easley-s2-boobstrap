@@ -54,7 +54,10 @@ nameField.addEventListener('keyup', function(e){
   createStorage(nameJson, nameField.value);
 });
 
+<<<<<<< HEAD
 getStorage(nameJson);
+=======
+>>>>>>> newfonts
 
 puestoField.addEventListener('keyup', (e)=>{
   const preview = e.currentTarget;
@@ -200,60 +203,88 @@ const blue = document.querySelector('.blue');
 
 function colorClickO(e) {
   const palette = e.target;
-  cardContent.classList.add('orange-palette');
-  cardContent.classList.remove('default-palette');
-  cardContent.classList.remove('blue-palette');
-  jason.palette = orange.value;
-  console.log(jason);
+    cardContent.classList.add('orange-palette');
+    cardContent.classList.remove('default-palette');
+    cardContent.classList.remove('blue-palette');
+    jason.palette = palette;
+    console.log(jason);
 }
 orange.addEventListener('click', colorClickO);
 
 function colorClickD(e) {
   const palette = e.target;
-  cardContent.classList.remove('orange-palette');
-  cardContent.classList.add('default-palette');
-  cardContent.classList.remove('blue-palette');
+    cardContent.classList.remove('orange-palette');
+    cardContent.classList.add('default-palette');
+    cardContent.classList.remove('blue-palette');
+    jason.palette = palette;
 }
 
 porDefecto.addEventListener('click', colorClickD);
 
 function colorClickB(e) {
   const palette = e.target;
-  cardContent.classList.remove('orange-palette');
-  cardContent.classList.remove('default-palette');
-  cardContent.classList.add('blue-palette');
+    cardContent.classList.remove('orange-palette');
+    cardContent.classList.remove('default-palette');
+    cardContent.classList.add('blue-palette');
+    jason.palette = palette;
 }
 
 blue.addEventListener('click', colorClickB);
 
-//TIPOGRAFIAS
 
-const monserrat = document.querySelector('.monserrat');
-const ubuntu = document.querySelector('.ubuntu');
-const comic = document.querySelector('.comic');
+//aplicamos las tipografias
 
-function typoClickA(e) {
-  const typo = e.target;
-  cardContent.classList.add('font-monserrat');
-  cardContent.classList.remove('font-ubuntu');
-  cardContent.classList.remove('font-comic');
-}
-monserrat.addEventListener('click', typoClickA);
+const ubuntu = document.querySelector('#ubuntu');
+const comic = document.querySelector('#comic');
+const monse = document.querySelector('#monserrat');
 
-function typoClickB(e) {
-  const typo = e.target;
-  cardContent.classList.remove('font-monserrat');
+function fontClickU (e){
+  const f = e.currentTarget.value;
+  console.log(f);
+
   cardContent.classList.add('font-ubuntu');
-  cardContent.classList.remove('font-comic');
-  console.log(typoClickB);
-}
-ubuntu.addEventListener('click', typoClickB);
-
-function typoClickC(e) {
-  const typo = e.target;
   cardContent.classList.remove('font-monserrat');
+  cardContent.classList.remove('font-comic');
+
+}
+ubuntu.addEventListener('click', fontClickU);
+
+function fontClickM (e){
+  const f = e.currentTarget.value;
+  console.log(f);
   cardContent.classList.remove('font-ubuntu');
+  cardContent.classList.add('font-monserrat');
+  cardContent.classList.remove('font-comic');
+}
+
+monse.addEventListener('click', fontClickM);
+
+function fontClickC (e){
+  const f = e.currentTarget.value;
+  console.log(f);
+  cardContent.classList.remove('font-ubuntu');
+  cardContent.classList.remove('font-monserrat');
   cardContent.classList.add('font-comic');
 }
 
-comic.addEventListener('click', typoClickC);
+comic.addEventListener('click', fontClickC);
+
+
+//Boton Reset
+let labelName= document.querySelector('.form-label--name');
+let labelPuesto = document.querySelector('.form-label--puesto');
+let allInputsClean= document.querySelectorAll('.form-input');
+let infoClean= "";
+const reset = document.querySelector('.reset');
+function clean() {
+  phoneDest.innerHTML=infoClean;
+  mailDest.innerHTML=infoClean;
+  linkDest.innerHTML=infoClean;
+  gitDest.innerHTML=infoClean;
+  nameCard.innerHTML=labelName.innerHTML;
+  puestoCard.innerHTML=labelPuesto.innerHTML;
+  
+  
+}
+
+reset.addEventListener('click',clean);

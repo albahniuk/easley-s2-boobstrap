@@ -216,3 +216,54 @@ fieldset {
     margin-left: 50%;
     transform: translate(-50%);
 }
+
+//LINK CARD
+
+.twitter-text{
+  font-family: $font-family-open;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: $color-gunmetal;
+  margin-bottom: 5px;
+
+
+}
+
+.btn-twitter{
+  border-radius: 3px;
+  width: 181px;
+  height: 30px;
+  background-color: $color-azure;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+  color: $color-white;
+  font-size: 14px;
+  font-family: $font-family-open;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 0;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+
+}
+.link-twitter{
+  text-decoration: none;
+
+}
+.card-link{
+  font-family: $font-family-open;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  color: $color-dull-orange;
+  text-decoration: none;
+
+}
+
+.getURL{
+  text-align: center;
+  border-top: 1px solid $color-white-two;
+  border-bottom: 1px solid $color-white-two;
+}

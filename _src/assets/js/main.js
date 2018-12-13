@@ -11,7 +11,7 @@ const jason = {
   "linkedin": "",
   "github": "",
   "photo": "",
-  "skills":["", "", ""]
+  "skills":[]
 };
 
 //Enviar el JSON y devuelve Card
@@ -186,9 +186,9 @@ function writeSkills(e) {
 
   //aqui hay que meter un if para que compruebe si esta pintado ya + tres maximo
   skillDest.innerHTML += `<li class="skill list__item--html">${author}</li>`;
-//ODIO JAVASCRIPT !!!!!!!!!!!
+  //ODIO JAVASCRIPT !!!!!!!!!!!
 
-  jason.skills+=author;
+  jason.skills.push(author);
   console.log(jason);
   // checkBoxLimit();
 };

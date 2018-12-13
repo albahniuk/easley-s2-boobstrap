@@ -35,10 +35,9 @@ function send() {
       <button class="btn-twitter" type="button"><i class="fab fa-twitter"></i>Compartir en twitter</button></a>`;
     });
 };
-
 btnCrearTarjeta.addEventListener('click', send);
-//NOMBRE Y PUESTO
 
+//NOMBRE Y PUESTO
 const nameField = document.querySelector('#name');
 const puestoField = document.querySelector('#puesto');
 const nameCard = document.querySelector('.h1-description');
@@ -180,13 +179,19 @@ for(const s of skillOrigin){
 // };
 
 function writeSkills(e) {
+  e.stopPropagation()
   const author = e.currentTarget.innerText;
-
+  const checkbox = document.getElementById(author);
+  const isChecked = checkbox.checked;
+  console.log('current',e.target.id)
+  if(jason.skills.indexOf(author) === -1 && jason.skills.length <3 && isChecked) {
+    skillDest.innerHTML += `<li class="skill list__item--html">${author}</li>`;
+    jason.skills.push(author);
+  } 
   //aqui hay que meter un if para que compruebe si esta pintado ya + tres maximo
-  skillDest.innerHTML += `<li class="skill list__item--html">${author}</li>`;
   //ODIO JAVASCRIPT !!!!!!!!!!!
 
-  jason.skills.push(author);
+  
   console.log(jason);
   // checkBoxLimit();
 };
@@ -226,8 +231,6 @@ function colorClickB(e) {
   cardContent.classList.remove('default-palette');
   cardContent.classList.add('blue-palette');
   jason.palette = 3;
-
-
 }
 
 blue.addEventListener('click', colorClickB);
@@ -246,8 +249,6 @@ function fontClickU (e){
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.remove('font-comic');
   jason.typography = 3;
-
-
 }
 ubuntu.addEventListener('click', fontClickU);
 
@@ -257,9 +258,6 @@ function fontClickM (e){
   cardContent.classList.add('font-monserrat');
   cardContent.classList.remove('font-comic');
   jason.typography = 1;
-
-
-
 }
 
 monse.addEventListener('click', fontClickM);
@@ -270,9 +268,7 @@ function fontClickC (e){
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.add('font-comic');
   jason.typography = 2;
-
 }
-
 comic.addEventListener('click', fontClickC);
 
 
@@ -283,7 +279,6 @@ let allInputsClean= document.querySelectorAll('.form-input');
 let infoClean= "";
 const reset = document.querySelector('.reset');
 function clean() {
-
   phoneDest.innerHTML=infoClean;
   mailDest.innerHTML=infoClean;
   linkDest.innerHTML=infoClean;
@@ -297,11 +292,6 @@ function clean() {
   nameField.value=infoClean;
   puestoField.value=infoClean;
   linkOrigin.value=infoClean;
-  gitOrigin.value=infoClean;
-  
-
-  
-
+  gitOrigin.value=infoClean; 
 }
-
 reset.addEventListener('click',clean);

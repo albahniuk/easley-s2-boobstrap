@@ -29,10 +29,11 @@ function send() {
     .then(urlResponse => urlResponse.json())
     .then(url => {
       paintURL.innerHTML =
-     ` <a href="${url.cardURL}" target="_blank">${url.cardURL}</a>`;
-      // <button class="btn-twitter" href="">Compartir en twitter</button>;
-      // const twitter = document.querySelector('.btn-twitter');
-      // twitter.href = `https://twitter.com/home?status=${url.cardURL}`;
+     ` <a href="${url.cardURL}" target="_blank">${url.cardURL}</a>
+      <a href="https://twitter.com/home?status=${url.cardURL}" target="_blank">
+      <button class="btn-twitter" type="button">Compartir en twitter</button></a>`;
+      const twitter = document.querySelector('.btn-twitter');
+      twitter.href = `https://twitter.com/home?status=${url.cardURL}`;
     });
 };
 
@@ -270,7 +271,7 @@ function fontClickC (e){
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.add('font-comic');
   jason.typography = 2;
-  
+
 }
 
 comic.addEventListener('click', fontClickC);

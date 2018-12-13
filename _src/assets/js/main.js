@@ -206,7 +206,7 @@ function colorClickO(e) {
   cardContent.classList.remove('default-palette');
   cardContent.classList.remove('blue-palette');
   jason.palette = 2;
-  console.log(jason);
+
 }
 orange.addEventListener('click', colorClickO);
 
@@ -227,7 +227,7 @@ function colorClickB(e) {
   cardContent.classList.add('blue-palette');
   jason.palette = 3;
 
-  console.log(jason);
+
 }
 
 blue.addEventListener('click', colorClickB);
@@ -241,23 +241,23 @@ const monse = document.querySelector('#monserrat');
 
 function fontClickU (e){
   const f = e.currentTarget.value;
-  console.log(f);
 
   cardContent.classList.add('font-ubuntu');
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.remove('font-comic');
   jason.typography = 3;
 
+
 }
 ubuntu.addEventListener('click', fontClickU);
 
 function fontClickM (e){
   const f = e.currentTarget.value;
-  console.log(f);
   cardContent.classList.remove('font-ubuntu');
   cardContent.classList.add('font-monserrat');
   cardContent.classList.remove('font-comic');
   jason.typography = 1;
+
 
 
 }
@@ -266,12 +266,11 @@ monse.addEventListener('click', fontClickM);
 
 function fontClickC (e){
   const f = e.currentTarget.value;
-  console.log(f);
   cardContent.classList.remove('font-ubuntu');
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.add('font-comic');
   jason.typography = 2;
-
+  
 }
 
 comic.addEventListener('click', fontClickC);

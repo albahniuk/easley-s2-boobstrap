@@ -29,9 +29,10 @@ function send() {
     .then(urlResponse => urlResponse.json())
     .then(url => {
       paintURL.innerHTML =
-     ` <a href="${url.cardURL}" target="_blank">${url.cardURL}</a>
-      <a href="https://twitter.com/home?status=${url.cardURL}" target="_blank">
-      <button class="btn-twitter" type="button">Compartir en twitter</button></a>`;
+      `<p class="twitter-text">La tarjeta ha sido creada:</p>
+      <a class="card-link" href="${url.cardURL}" target="_blank">${url.cardURL}</a>
+      <a class="link-twitter" href="https://twitter.com/home?status=${url.cardURL}" target="_blank">
+      <button class="btn-twitter" type="button"><i class="fab fa-twitter"></i>Compartir en twitter</button></a>`;
       const twitter = document.querySelector('.btn-twitter');
       twitter.href = `https://twitter.com/home?status=${url.cardURL}`;
     });

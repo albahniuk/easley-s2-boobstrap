@@ -14,6 +14,30 @@ const jason = {
   "skills":["", "", ""]
 };
 
+//Enviar el JSON y devuelve Card
+const paintURL = document.querySelector('.getURL');
+const btnCrearTarjeta = document.querySelector('.collapsible__content-button');
+
+function send() {
+  fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+    method: 'POST',
+    body: JSON.stringify(jason),
+    headers: {
+      'content-type': 'application/json'
+    },
+  })
+    .then(urlResponse => urlResponse.json())
+    .then(url => {
+      console.log(url);
+      // paintURL.innerHTML = `<p class="cardcreated-text">La tarjeta ha sido creada:</p>
+      // <a href="${url.cardURL}" target="_blank">${url.cardURL}</a>
+      // <button class="btn-twitter" href="">Compartir en twitter</button>`;
+      // const twitter = document.querySelector('.btn-twitter');
+      // twitter.href = `https://twitter.com/home?status=${url.cardURL}`;
+    });
+};
+
+btnCrearTarjeta.addEventListener('click', send);
 //NOMBRE Y PUESTO
 
 const nameField = document.querySelector('#name');
@@ -136,15 +160,34 @@ getList(webApi);
 const skillDest = document.querySelector('.skills__list');
 const skillOrigin = document.querySelectorAll('.input-skills');
 
+
 for(const s of skillOrigin){
   s.addEventListener('click', writeSkills);
-  }
+}
+
+function checkBoxLimit() {
+  const skillOrigin = document.querySelectorAll('.input-skills');
+  const limit = 3;
+for (let i = 0; i < skillOrigin.length; i++) {
+  skillOrigin[i].onclick = function () {
+    let checkedcount = 0;
+    for (let i = 0; i < skillOrigin.length; i++) {
+       checkedcount += (skillOrigin[i].checked)? 1:0;
+     }
+     if (checkedcount > limit) {
+       alert('Elige un máximo de ' + limit + ' habilidades.');
+       this.checked = false;
+     }
+   }
+ }
+};
 
 function writeSkills(e) {
     const author = e.currentTarget.innerText;
+    //aqui hay que meter un if para que compruebe si esta pintado ya + tres maximo
     skillDest.innerHTML += `<li class="skill list__item--html">${author}</li>`;
-    console.log(author);
-}
+    checkBoxLimit();
+};
 
 
 //PALETAS

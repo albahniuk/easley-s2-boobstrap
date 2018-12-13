@@ -188,7 +188,7 @@ function writeSkills(e) {
   skillDest.innerHTML += `<li class="skill list__item--html">${author}</li>`;
 //ODIO JAVASCRIPT !!!!!!!!!!!
 
-  jason.skills =
+  jason.skills+=author;
   console.log(jason);
   // checkBoxLimit();
 };

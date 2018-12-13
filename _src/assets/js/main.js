@@ -11,7 +11,7 @@ const jason = {
   "linkedin": "",
   "github": "",
   "photo": "",
-  "skills":["", "", ""]
+  "skills":[]
 };
 
 //Enviar el JSON y devuelve Card
@@ -108,7 +108,7 @@ function writeMe(e) {
   jason.email = mailOrigin.value;
   jason.linkedin = linkOrigin.value;
   jason.github = gitOrigin.value;
-  console.log(jason);
+
 }
 
 phoneOrigin.addEventListener('keyup', writeMe);
@@ -162,28 +162,33 @@ for(const s of skillOrigin){
   s.addEventListener('click', writeSkills);
 }
 
-function checkBoxLimit() {
-  const skillOrigin = document.querySelectorAll('.input-skills');
-  const limit = 3;
-for (let i = 0; i < skillOrigin.length; i++) {
-  skillOrigin[i].onclick = function () {
-    let checkedcount = 0;
-    for (let i = 0; i < skillOrigin.length; i++) {
-       checkedcount += (skillOrigin[i].checked)? 1:0;
-     }
-     if (checkedcount > limit) {
-       alert('Elige un máximo de ' + limit + ' habilidades.');
-       this.checked = false;
-     }
-   }
- }
-};
+// function checkBoxLimit() {
+//   const skillOrigin = document.querySelectorAll('.input-skills');
+//   const limit = 3;
+// for (let i = 0; i < skillOrigin.length; i++) {
+//   skillOrigin[i].onclick = function () {
+//     let checkedcount = 0;
+//     for (let i = 0; i < skillOrigin.length; i++) {
+//        checkedcount += (skillOrigin[i].checked)? 1:0;
+//      }
+//      if (checkedcount > limit) {
+//        alert('Elige un máximo de ' + limit + ' habilidades.');
+//        this.checked = false;
+//      }
+//    }
+//  }
+// };
 
 function writeSkills(e) {
-    const author = e.currentTarget.innerText;
-    //aqui hay que meter un if para que compruebe si esta pintado ya + tres maximo
-    skillDest.innerHTML += `<li class="skill list__item--html">${author}</li>`;
-    checkBoxLimit();
+  const author = e.currentTarget.innerText;
+
+  //aqui hay que meter un if para que compruebe si esta pintado ya + tres maximo
+  skillDest.innerHTML += `<li class="skill list__item--html">${author}</li>`;
+  //ODIO JAVASCRIPT !!!!!!!!!!!
+
+  jason.skills.push(author);
+  console.log(jason);
+  // checkBoxLimit();
 };
 
 
@@ -201,7 +206,7 @@ function colorClickO(e) {
   cardContent.classList.remove('default-palette');
   cardContent.classList.remove('blue-palette');
   jason.palette = 2;
-  console.log(jason);
+
 }
 orange.addEventListener('click', colorClickO);
 
@@ -222,7 +227,7 @@ function colorClickB(e) {
   cardContent.classList.add('blue-palette');
   jason.palette = 3;
 
-  console.log(jason);
+
 }
 
 blue.addEventListener('click', colorClickB);
@@ -236,23 +241,23 @@ const monse = document.querySelector('#monserrat');
 
 function fontClickU (e){
   const f = e.currentTarget.value;
-  console.log(f);
 
   cardContent.classList.add('font-ubuntu');
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.remove('font-comic');
   jason.typography = 3;
 
+
 }
 ubuntu.addEventListener('click', fontClickU);
 
 function fontClickM (e){
   const f = e.currentTarget.value;
-  console.log(f);
   cardContent.classList.remove('font-ubuntu');
   cardContent.classList.add('font-monserrat');
   cardContent.classList.remove('font-comic');
   jason.typography = 1;
+
 
 
 }
@@ -261,12 +266,11 @@ monse.addEventListener('click', fontClickM);
 
 function fontClickC (e){
   const f = e.currentTarget.value;
-  console.log(f);
   cardContent.classList.remove('font-ubuntu');
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.add('font-comic');
   jason.typography = 2;
-
+  
 }
 
 comic.addEventListener('click', fontClickC);

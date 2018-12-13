@@ -25,6 +25,7 @@
     border-radius: 2px;
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.35);
     background-color: $color-white;
+
 }
 
 .description {
@@ -42,8 +43,8 @@
 
 .text-description {
     font-size: 16px;
-    color: $color-gunmetal;
     font-family: $font-family-comic;
+    color: $color-gunmetal;
     margin: 0;
 }
 
@@ -56,7 +57,6 @@
 
 }
 
-
 .social-media__icon {
     width: 32px;
     height: 32px;
@@ -67,6 +67,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.link-media {
+  text-decoration: none;
 }
 
 .skills__list {
@@ -139,3 +145,31 @@
         color: $color-slate;
     }
 }
+
+.font-ubuntu {
+  .h1-description {
+    font-family: $font-family-ubu;
+  }
+  .text-description {
+    font-family: $font-family-ubu;
+  }
+}
+
+.font-comic {
+  .h1-description {
+    font-family: $font-family-comic;
+  }
+  .text-description {
+    font-family: $font-family-comic;
+  }
+}
+
+.font-monserrat {
+  .h1-description {
+    font-family: $font-family-mont;
+  }
+  .text-description {
+    font-family: $font-family-mont;
+  }
+}
+

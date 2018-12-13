@@ -28,7 +28,6 @@ nameField.addEventListener('keyup', function(e){
 });
 
 
-
 puestoField.addEventListener('keyup', (e)=>{
   const preview = e.currentTarget;
   puestoCard.innerHTML = preview.value;
@@ -216,3 +215,23 @@ function fontClickC (e){
 }
 
 comic.addEventListener('click', fontClickC);
+
+
+//Boton Reset
+let labelName= document.querySelector('.form-label--name');
+let labelPuesto = document.querySelector('.form-label--puesto');
+let allInputsClean= document.querySelectorAll('.form-input');
+let infoClean= "";
+const reset = document.querySelector('.reset');
+function clean() {
+  phoneDest.innerHTML=infoClean;
+  mailDest.innerHTML=infoClean;
+  linkDest.innerHTML=infoClean;
+  gitDest.innerHTML=infoClean;
+  nameCard.innerHTML=labelName.innerHTML;
+  puestoCard.innerHTML=labelPuesto.innerHTML;
+  
+  
+}
+
+reset.addEventListener('click',clean);

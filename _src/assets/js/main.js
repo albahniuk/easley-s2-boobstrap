@@ -202,7 +202,7 @@ function colorClickO(e) {
   cardContent.classList.add('orange-palette');
   cardContent.classList.remove('default-palette');
   cardContent.classList.remove('blue-palette');
-  jason.palette = orange.value;
+  jason.palette = 2;
   console.log(jason);
 }
 orange.addEventListener('click', colorClickO);
@@ -212,6 +212,7 @@ function colorClickD(e) {
   cardContent.classList.remove('orange-palette');
   cardContent.classList.add('default-palette');
   cardContent.classList.remove('blue-palette');
+  jason.palette = 1;
 }
 
 porDefecto.addEventListener('click', colorClickD);
@@ -221,6 +222,9 @@ function colorClickB(e) {
   cardContent.classList.remove('orange-palette');
   cardContent.classList.remove('default-palette');
   cardContent.classList.add('blue-palette');
+  jason.palette = 3;
+
+  console.log(jason);
 }
 
 blue.addEventListener('click', colorClickB);
@@ -236,6 +240,8 @@ function typoClickA(e) {
   cardContent.classList.add('font-monserrat');
   cardContent.classList.remove('font-ubuntu');
   cardContent.classList.remove('font-comic');
+  jason.typography = 3;
+
 }
 monserrat.addEventListener('click', typoClickA);
 
@@ -244,7 +250,9 @@ function typoClickB(e) {
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.add('font-ubuntu');
   cardContent.classList.remove('font-comic');
-  console.log(typoClickB);
+  jason.typography = 1;
+
+
 }
 ubuntu.addEventListener('click', typoClickB);
 
@@ -253,6 +261,8 @@ function typoClickC(e) {
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.remove('font-ubuntu');
   cardContent.classList.add('font-comic');
+  jason.typography = 2;
+
 }
 
 comic.addEventListener('click', typoClickC);

@@ -45,6 +45,29 @@ fieldset {
     justify-content: space-between;
 }
 
+.typography{
+  display: flex;
+  justify-content: space-between;
+}
+
+.ubuntu {
+  font-family: $font-family-ubu;
+  font-size: 16px;
+  margin: 0;
+}
+
+.comic {
+  font-family: $font-family-comic;
+  font-size: 16px;
+  margin: 0;
+}
+
+.monserrat {
+  font-family: $font-family-mont;
+  font-size: 16px;
+  margin: 0;
+}
+
 .radio {
     width: 17px;
     height: 17px;
@@ -86,24 +109,6 @@ fieldset {
     list-style: none;
     align-items: baseline;
     height: 120px;
-}
-
-.font-ubuntu {
-    font-family: $font-family-ubu;
-    font-size: 16px;
-    margin: 0;
-}
-
-.font-comic {
-    font-family: $font-family-comic;
-    font-size: 16px;
-    margin: 0;
-}
-
-.font-monserrat {
-    font-family: $font-family-mont;
-    font-size: 16px;
-    margin: 0;
 }
 
 .collapsible__content {
@@ -162,7 +167,7 @@ fieldset {
     margin-top: 40px;
 }
 
-.skill__three{
+.skills{
     color: $color-dark-green-blue;
     font-family: $font-family-open;
 }
@@ -174,8 +179,10 @@ fieldset {
     align-items: baseline;
 }
 
-.form-input-c{
+.input-skills{
     margin-bottom: 10px;
+    color: $color-dark-green-blue;
+    font-family: $font-family-open;
 }
 
 // COMPARTE SECTION

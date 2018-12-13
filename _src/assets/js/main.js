@@ -53,8 +53,6 @@ nameField.addEventListener('keyup', function(e){
   createStorage(nameJson, nameField.value);
 });
 
-getStorage(nameJson);
-
 puestoField.addEventListener('keyup', (e)=>{
   const preview = e.currentTarget;
   puestoCard.innerHTML = preview.value;
@@ -229,40 +227,64 @@ function colorClickB(e) {
 
 blue.addEventListener('click', colorClickB);
 
-//TIPOGRAFIAS
 
-const monserrat = document.querySelector('.monserrat');
-const ubuntu = document.querySelector('.ubuntu');
-const comic = document.querySelector('.comic');
+//aplicamos las tipografias
 
-function typoClickA(e) {
-  const typo = e.target;
-  cardContent.classList.add('font-monserrat');
-  cardContent.classList.remove('font-ubuntu');
+const ubuntu = document.querySelector('#ubuntu');
+const comic = document.querySelector('#comic');
+const monse = document.querySelector('#monserrat');
+
+function fontClickU (e){
+  const f = e.currentTarget.value;
+  console.log(f);
+
+  cardContent.classList.add('font-ubuntu');
+  cardContent.classList.remove('font-monserrat');
   cardContent.classList.remove('font-comic');
   jason.typography = 3;
 
 }
-monserrat.addEventListener('click', typoClickA);
+ubuntu.addEventListener('click', fontClickU);
 
-function typoClickB(e) {
-  const typo = e.target;
-  cardContent.classList.remove('font-monserrat');
-  cardContent.classList.add('font-ubuntu');
+function fontClickM (e){
+  const f = e.currentTarget.value;
+  console.log(f);
+  cardContent.classList.remove('font-ubuntu');
+  cardContent.classList.add('font-monserrat');
   cardContent.classList.remove('font-comic');
   jason.typography = 1;
 
 
 }
-ubuntu.addEventListener('click', typoClickB);
 
-function typoClickC(e) {
-  const typo = e.target;
-  cardContent.classList.remove('font-monserrat');
+monse.addEventListener('click', fontClickM);
+
+function fontClickC (e){
+  const f = e.currentTarget.value;
+  console.log(f);
   cardContent.classList.remove('font-ubuntu');
+  cardContent.classList.remove('font-monserrat');
   cardContent.classList.add('font-comic');
   jason.typography = 2;
 
 }
 
-comic.addEventListener('click', typoClickC);
+comic.addEventListener('click', fontClickC);
+
+
+//Boton Reset
+let labelName= document.querySelector('.form-label--name');
+let labelPuesto = document.querySelector('.form-label--puesto');
+let allInputsClean= document.querySelectorAll('.form-input');
+let infoClean= "";
+const reset = document.querySelector('.reset');
+function clean() {
+  phoneDest.innerHTML=infoClean;
+  mailDest.innerHTML=infoClean;
+  linkDest.innerHTML=infoClean;
+  gitDest.innerHTML=infoClean;
+  nameCard.innerHTML=labelName.innerHTML;
+  puestoCard.innerHTML=labelPuesto.innerHTML;
+}
+
+reset.addEventListener('click',clean);

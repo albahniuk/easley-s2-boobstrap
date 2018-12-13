@@ -54,11 +54,6 @@ nameField.addEventListener('keyup', function(e){
   createStorage(nameJson, nameField.value);
 });
 
-<<<<<<< HEAD
-getStorage(nameJson);
-=======
->>>>>>> newfonts
-
 puestoField.addEventListener('keyup', (e)=>{
   const preview = e.currentTarget;
   puestoCard.innerHTML = preview.value;
@@ -283,8 +278,6 @@ function clean() {
   gitDest.innerHTML=infoClean;
   nameCard.innerHTML=labelName.innerHTML;
   puestoCard.innerHTML=labelPuesto.innerHTML;
-  
-  
 }
 
 reset.addEventListener('click',clean);

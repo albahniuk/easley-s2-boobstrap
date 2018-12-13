@@ -283,12 +283,16 @@ let allInputsClean= document.querySelectorAll('.form-input');
 let infoClean= "";
 const reset = document.querySelector('.reset');
 function clean() {
+
   phoneDest.innerHTML=infoClean;
   mailDest.innerHTML=infoClean;
   linkDest.innerHTML=infoClean;
   gitDest.innerHTML=infoClean;
   nameCard.innerHTML=labelName.innerHTML;
   puestoCard.innerHTML=labelPuesto.innerHTML;
+  skillDest.innerHTML=infoClean;
+  profileImage.style.backgroundImage="url('https://via.placeholder.com/240x200')";
+
 }
 
 reset.addEventListener('click',clean);

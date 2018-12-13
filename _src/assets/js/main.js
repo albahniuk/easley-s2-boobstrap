@@ -292,6 +292,15 @@ function clean() {
   puestoCard.innerHTML=labelPuesto.innerHTML;
   skillDest.innerHTML=infoClean;
   profileImage.style.backgroundImage="url('https://via.placeholder.com/240x200')";
+  phoneOrigin.value=infoClean;
+  mailOrigin.value=infoClean;
+  nameField.value=infoClean;
+  puestoField.value=infoClean;
+  linkOrigin.value=infoClean;
+  gitOrigin.value=infoClean;
+  
+
+  
 
 }
 

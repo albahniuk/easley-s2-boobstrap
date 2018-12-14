@@ -187,11 +187,11 @@ function writeSkills(e) {
   if(jason.skills.indexOf(author) === -1 && jason.skills.length <3 && isChecked) {
     skillDest.innerHTML += `<li class="skill list__item--html">${author}</li>`;
     jason.skills.push(author);
-  } 
+  }
   //aqui hay que meter un if para que compruebe si esta pintado ya + tres maximo
   //ODIO JAVASCRIPT !!!!!!!!!!!
 
-  
+
   console.log(jason);
   // checkBoxLimit();
 };
@@ -286,12 +286,12 @@ function clean() {
   nameCard.innerHTML=labelName.innerHTML;
   puestoCard.innerHTML=labelPuesto.innerHTML;
   skillDest.innerHTML=infoClean;
-  profileImage.style.backgroundImage="url('https://via.placeholder.com/240x200')";
+  profileImage.style.backgroundImage="url('https://www.puzzlepassion.com/wp-content/uploads/2017/09/darth_vader.jpg')";
   phoneOrigin.value=infoClean;
   mailOrigin.value=infoClean;
   nameField.value=infoClean;
   puestoField.value=infoClean;
   linkOrigin.value=infoClean;
-  gitOrigin.value=infoClean; 
+  gitOrigin.value=infoClean;
 }
 reset.addEventListener('click',clean);

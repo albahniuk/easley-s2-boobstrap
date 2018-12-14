@@ -4,39 +4,38 @@
       <div class="section-form__fieldset-container section-form__fieldset-container--design">
         <fieldset class="section-form__subsection">
           <div class="collapsible">
-            <div class="collapsible__clickable">
+            <div class="collapsible__clickable collapsible__design">
               <div class="collapsible__clickable-title">
-                <i class="far fa-object-ungroup h2-icon"></i>
-                <h2 class="h2">Diseña</h2>
+                <i class="far fa-object-ungroup title-icon"></i>
+                <h2 class="title__collapsible">Diseña</h2>
               </div>
               <div class="collapsible__clickable-icons">
                 <i class="fas fa-angle-down icon-down"></i>
-                <i class="fas fa-angle-up icon-up"></i>
               </div>
             </div>
-            <div class="collapsible__content">
+            <div class="collapsible__content-design hidden">
               <div class="colors">
-                <h3 class="h3">Colores</h3>
+                <h3 class="subtitle__collapsible">Colores</h3>
                 <ul class="themes">
                   <li>
-                    <label for="colors" class="theme">
-                      <input type="radio" id="cold" value="cold" name="colors" class="radio">
+                    <label for="colors" class="theme default">
+                      <input type="radio" id="cold" name="colors" class="radio" value="1">
                       <div class="colors__list" style="background-color:#114e4e"></div>
                       <div class="colors__list" style="background-color:#438792;"></div>
                       <div class="colors__list" style="background-color: #a2deaf"></div>
                     </label>
                   </li>
                   <li>
-                    <label for="colors" class="theme">
-                      <input type="radio" id="warm" value="warm" name="colors" class="radio">
+                    <label for="colors" class="theme orange">
+                      <input type="radio" id="warm" name="colors" class="radio" value="2">
                       <div class="colors__list" style="background-color: #420101"></div>
                       <div class="colors__list" style="background-color: #bd1010"></div>
                       <div class="colors__list" style="background-color: #e95626"></div>
                     </label>
                   </li>
                   <li>
-                    <label for="colors" class="theme">
-                      <input type="radio" id="formal" value="formal" name="colors" class="radio">
+                    <label for="colors" class="theme blue">
+                      <input type="radio" id="formal" name="colors" class="radio" value="3">
                       <div class="colors__list" style="background-color: #3e5b65"></div>
                       <div class="colors__list" style="background-color: #dfe5eb"></div>
                       <div class="colors__list" style="background-color: #a0c0cf"></div>
@@ -45,24 +44,24 @@
                 </ul>
               </div>
               <div class="fonts">
-                <h3 class="h3">Fuentes</h3>
+                <h3 class="subtitle__collapsible">Fuentes</h3>
                 <ul class="fonts___list">
                   <li>
-                    <label for="fonts" class="fonts">
-                      <input type="radio" id="ubuntu" value="ubuntu" name="fonts" class="radio">
-                      <p class="font-ubuntu">Ubuntu</p>
+                    <label for="ubuntu" class="typography ubuntu">
+                      <input type="radio" id="ubuntu" value="ubuntu" name="fonts" class="radio" value="1">
+                      <p class="ubuntu">Ubuntu</p>
                     </label>
                   </li>
                   <li>
-                    <label for="fonts" class="fonts">
-                      <input type="radio" id="comic" value="comic" name="fonts" class="radio">
-                      <p class="font-comic">Comic Sans</p>
+                    <label for="comic" class="typography comic">
+                      <input type="radio" id="comic" value="comic" name="fonts" class="radio" value="2">
+                      <p class="comic">Comic Sans</p>
                     </label>
                   </li>
                   <li>
-                    <label for="fonts" class="fonts">
-                      <input type="radio" id="monserrat" value="monserrat" name="fonts" class="radio">
-                      <p class="font-monserrat">Monserrat</p>
+                    <label for="monserrat" class="typography monserrat">
+                      <input type="radio" id="monserrat" value="monserrat" name="fonts" class="radio" value="3">
+                      <p class="monserrat">Monserrat</p>
                     </label>
                   </li>
                 </ul>
@@ -72,87 +71,73 @@
         </fieldset>
         <fieldset>
           <div class="collapsible">
-            <div class="collapsible__clickable">
+            <div class="collapsible__clickable collapsible__fill">
               <div class="collapsible__clickable-title">
-                <i class="far fa-keyboard h2-icon"></i>
-                <h2 class="h2">Rellena</h2>
+                <i class="far fa-keyboard title-icon"></i>
+                <h2 class="title__collapsible">Rellena</h2>
               </div>
               <div class="collapsible__clickable-icons">
-                  <i class="fas fa-angle-down icon-down"></i>
-                  <i class="fas fa-angle-up icon-up"></i>
+                <i class="fas fa-angle-down icon-down"></i>
               </div>
             </div>
-            <div class="collapsible__content">
+            <div class="collapsible__content-fill hidden">
               <div class="collapsible__content-form">
-                <label for="name" class="form-label">Nombre completo</label>
+                <label for="name" class="form-label form-label--name">Nombre completo</label>
                 <input type="text" name="name" id="name" placeholder="Ej: Sally Jill" class="form-input">
               </div>
               <div class="collapsible__content-form">
-                <label for="puesto" class="form-label">Puesto</label>
+                <label for="puesto" class="form-label form-label--puesto">Puesto</label>
                 <input type="text" name="puesto" id="puesto" placeholder="Ej: Front-end unicorn" class="form-input">
               </div>
               <div class="collapsible__content-form">
                 <div class="container__btn-img">
                   <label for="imagen" class="form-label">Imagen de Perfil</label>
-                  <input type="file" id="img-selector" name="img-selector" class="action_hiddenField">
-                  <button class="btn--img" type="button">Añadir Imagen</button>
+                  <div class="collapsible__upload-file">
+                    <input type="file" id="img-selector" name="img-selector" class="action_hiddenField">
+                    <button class="btn--img" type="button">Añadir Imagen</button>
+                    <div class="uploadFile"></div>
+                  </div>
                 </div>
-                <div class="subirArchivo"></div>
               </div>
               <div class="collapsible__content-form">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" id="email" placeholder="Ej: sally-hill@gmail.com" class="form-input">
+                <input type="email" name="email" id="email" placeholder="Ej: sally-hill@gmail.com" class="form-input" data-common="mailto:" data-ico="far fa-envelope social-media__icon" data-dest=".list__item--mail">
               </div>
               <div class="collapsible__content-form">
                 <label for="phone" class="form-label">Teléfono</label>
-                <input type="tel" id="phone" name="phone" placeholder="Ej: 555-55-55-55" class="form-input">
+                <input type="tel" id="phone" name="phone" placeholder="Ej: 555-55-55-55" class="form-input" data-common="tel:" data-ico="fas fa-mobile-alt social-media__icon" data-dest=".list__item--tel">
               </div>
               <div class="collapsible__content-form">
                 <label for="linkedin" class="form-label">Linkedin</label>
-                <input type="" name="linkedin" id="linkedin" placeholder="Ej: linkedin.com/in/sally.hill" class="form-input">
+                <input type="" name="linkedin" id="linkedin" placeholder="Ej: linkedin.com/in/sally.hill" class="form-input" data-common="https://es.linkedin.com/" data-ico="fab fa-linkedin-in social-media__icon" data-dest=".list__item--linkedin">
               </div>
               <div class="collapsible__content-form">
                 <label for="github" class="form-label">Github</label>
-                <input type="" name="github" id="github" placeholder="Ej: @sally-hill" class="form-input">
+                <input type="" name="github" id="github" placeholder="Ej: @sally-hill" class="form-input" data-common="https://github.com/" data-ico="fab fa-github-alt social-media__icon" data-dest=".list__item--github">
               </div>
-              <div class="container__skill">
-                <p class="skill__three">Habilidades(máximo 3)</p>
+              <div class="container__skill--title">
+                <p class="skills">Habilidades (máximo 3)</p>
               </div>
-              <div class="collapsible__content-form">
-                <label for="html">
-                  <input id="html" type="checkbox" value="" name="html" class="form-input">
-                  HTML
-                </label>
-              </div>
-              <div class="collapsible__content-form">
-                <label for="css">
-                  <input id="css" type="checkbox" value="" name="css" class="form-input">
-                  CSS
-                </label>
-              </div>
-              <div class="collapsible__content-form">
-                <label for="react">
-                  <input id="react" type="checkbox" value="" name="react" class="form-input">
-                  React
-                </label>
+              <div class="container__skills">
+                <div class="collapsible__content-form"></div>
               </div>
             </div>
           </div>
         </fieldset>
         <fieldset>
-          <div class="collapsible">
-            <div class="collapsible__clickable">
+          <div class="collapsible collapsible-share">
+            <div class="collapsible__clickable collapsible__share">
               <div class="collapsible__clickable-title">
-                <i class="fas fa-share-alt h2-icon"></i>
-                <h2 class="h2">Comparte</h2>
+                <i class="fas fa-share-alt title-icon"></i>
+                <h2 class="title__collapsible title__collapsible-share">Comparte</h2>
               </div>
               <div class="collapsible__clickable-icons">
-                  <i class="fas fa-angle-down icon-down"></i>
-                  <i class="fas fa-angle-up icon-up"></i>
+                <i class="fas fa-angle-down icon-down"></i>
               </div>
             </div>
-            <div class="collapsible__content">
-              <button class="collapsible__content-button"><i class="far fa-address-card"></i>Crear tarjeta</button>
+            <div class="collapsible__content-share hidden">
+              <button type="button" class="collapsible__content-button"><i class="far fa-address-card"></i>Crear tarjeta</button>
+              <div class="getURL"></div>
             </div>
           </div>
         </fieldset>

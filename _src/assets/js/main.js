@@ -33,6 +33,7 @@ function send() {
       <a class="card-link" href="${url.cardURL}" target="_blank">${url.cardURL}</a>
       <a class="link-twitter" href="https://twitter.com/home?status=${url.cardURL}" target="_blank">
       <button class="btn-twitter" type="button"><i class="fab fa-twitter"></i>Compartir en twitter</button></a>`;
+      btnCrearTarjeta.style.backgroundColor = '#d5d5d5';
     });
 };
 

@@ -116,7 +116,7 @@ linkOrigin.addEventListener('keyup', writeMe);
 gitOrigin.addEventListener('keyup', writeMe);
 
 //SKILLS
-// Llamar a la Api de las Skills
+// Llamar a la Api de las Skills + añadir a la local storage
 const webApi = 'https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json';
 const skillsCont = document.querySelector('.container__skills');
 const keyStorage = 'skills';
@@ -153,54 +153,59 @@ function getStorage(key) {
 
 getList(webApi);
 
+//Aqui viene lo chungo: que se pinten en la tarjeta solo una vez y se
+// quite sin rechistar
 const skillDest = document.querySelector('.skills__list');
 const skillOrigin = document.querySelectorAll('.input-skills');
 
-
 for(const s of skillOrigin){
-  s.addEventListener('click', writeSkills);
+  s.addEventListener('change', checkInputs);
 }
 
-// function checkBoxLimit() {
-//   const skillOrigin = document.querySelectorAll('.input-skills');
-//   const limit = 3;
-// for (let i = 0; i < skillOrigin.length; i++) {
-//   skillOrigin[i].onclick = function () {
-//     let checkedcount = 0;
-//     for (let i = 0; i < skillOrigin.length; i++) {
-//        checkedcount += (skillOrigin[i].checked)? 1:0;
-//      }
-//      if (checkedcount > limit) {
-//        alert('Elige un máximo de ' + limit + ' habilidades.');
-//        this.checked = false;
-//      }
-//    }
-//  }
-// };
+// Funcion manejadora del evento click de cada input
+// que deshabilita y habilita los checkboxes en función del número de checkboxes checked.
+function checkInputs(event) {
+  //aqui se crea la lista de la Card
+  let cardList = document.createElement('li');
+  cardList.className = `skill list__item--${this.innerText}`;
+  let cardElement = document.createTextNode(`${this.innerText}`);
+  cardList.appendChild(cardElement);
+  let cardElementSpecific = document.querySelector(`.list__item--${this.innerText}`);
 
-function writeSkills(e) {
-  e.stopPropagation()
-  const author = e.currentTarget.innerText;
-  const checkbox = document.getElementById(author);
-  const isChecked = checkbox.checked;
-  console.log('current',e.target.id)
-  if(jason.skills.indexOf(author) === -1 && jason.skills.length <3 && isChecked) {
-    skillDest.innerHTML += `<li class="skill list__item--html">${author}</li>`;
-    jason.skills.push(author);
-  } 
-  //aqui hay que meter un if para que compruebe si esta pintado ya + tres maximo
-  //ODIO JAVASCRIPT !!!!!!!!!!!
+  //Empieza la fiesta
+  if(jason.skills.length < 3 && event.target.checked === true){
+    console.log('Se ha añadido correctamente');
+    skillDest.appendChild(cardList);
+    jason.skills.push(event.target.innerText);
+    console.log(jason.skills);
 
-  
-  console.log(jason);
-  // checkBoxLimit();
-};
+  } else {
+    console.log('Se ha borrado correctamente');
+    event.target.checked = false;
+    //AQUI MIRAMOS SI ESTABA DENTRO DE LA LISTA DE LA CARD Y LO BORRAMOS
+    if(cardElementSpecific){
+      skillDest.removeChild(cardList);
+      jason.skills.splice(jason.skills.indexOf(event.target.innerText), 1);
+    }
+  }
+
+  //Si la lista de inputs seleccionados es igual o mayor a 3, tenemos que deshabilitar los inputs no seleccionados y sino,
+  //habilitamos los inputs no seleccionados.
+  if (jason.skills.length >= 3) {
+    for (let i = 0; i < jason.skills.length; i++ ) {
+      skillOrigin[i].disabled = true;
+    }
+  } else { //habilito otra vez todos los inputs porque ya no tengo 3 opciones seleccionadas
+      for (let i = 0; i < jason.skills.length.length; i++ ) {
+        skillOrigin[i].disabled = false;
+        }
+    }
+}
 
 
 //PALETAS
 
 const cardContent = document.querySelector('.section__card-content');
-// const orangePalette = document.querySelector('.orange-palette');
 const porDefecto = document.querySelector('.default');
 const orange = document.querySelector('.orange');
 const blue = document.querySelector('.blue');
@@ -292,6 +297,6 @@ function clean() {
   nameField.value=infoClean;
   puestoField.value=infoClean;
   linkOrigin.value=infoClean;
-  gitOrigin.value=infoClean; 
+  gitOrigin.value=infoClean;
 }
 reset.addEventListener('click',clean);

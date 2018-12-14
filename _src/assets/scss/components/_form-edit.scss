@@ -4,6 +4,8 @@
 
 .title__collapsible {
   margin-left: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
   font-family: $font-family-open;
   font-size: 18px;
   font-weight: 600;
@@ -23,11 +25,17 @@ fieldset {
 
 .collapsible {
   border-bottom: 1px solid $color-white-two;
-  margin: 27px 20px 0px 20px;
+  margin: 10px 20px 0px 20px;
   min-width: auto;
 }
 
 // DISEÑA SECTION
+
+.collapsible__content-design{
+  &.hidden{
+    display: none;
+  }
+}
 
 .colors{
   display: flex;
@@ -83,6 +91,7 @@ fieldset {
 .collapsible__clickable-title{
   display: flex;
   align-items: center;
+  margin-bottom: 7px;
 }
 
 .subtitle__collapsible {
@@ -116,6 +125,12 @@ fieldset {
 }
 
 // RELLENA SECTION
+
+.collapsible__content-fill {
+  &.hidden{
+    display: none;
+  }
+}
 
 .collapsible__content-form{
   color: $color-dark-green-blue;
@@ -187,12 +202,18 @@ fieldset {
 
 // COMPARTE SECTION
 
-.title__collapsible-comparte {
+.collapsible__content-share {
+  &.hidden{
+    display: none;
+  }
+}
+
+.title__collapsible-share {
   margin: 0;
   padding: 0 0 0 12px;
 }
 
-.collapsible-comparte {
+.collapsible-share {
   margin: 0 23px;
   padding-top: 10px;
 }

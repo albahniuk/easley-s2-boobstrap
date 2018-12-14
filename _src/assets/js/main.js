@@ -281,19 +281,16 @@ comic.addEventListener('click', fontClickC);
 
 
 //Boton Reset
-let labelName = document.querySelector('.form-label--name');
-let labelPuesto = document.querySelector('.form-label--puesto');
-let allInputsClean = document.querySelectorAll('.form-input');
-let infoClean = "";
+let infoClean = '';
 const reset = document.querySelector('.reset');
+
 function clean() {
   phoneDest.innerHTML = infoClean;
   mailDest.innerHTML = infoClean;
   linkDest.innerHTML = infoClean;
   gitDest.innerHTML = infoClean;
-  nameCard.innerHTML = labelName.innerHTML;
-  puestoCard.innerHTML = labelPuesto.innerHTML;
-  skillDest.innerHTML = infoClean;
+  nameCard.innerHTML = 'Nombre Apellido';
+  puestoCard.innerHTML = 'Front-End developer';
   profileImage.style.backgroundImage = "url('https://www.puzzlepassion.com/wp-content/uploads/2017/09/darth_vader.jpg')";
   phoneOrigin.value = infoClean;
   mailOrigin.value = infoClean;
@@ -301,6 +298,15 @@ function clean() {
   puestoField.value = infoClean;
   linkOrigin.value = infoClean;
   gitOrigin.value = infoClean;
+  //colores y fuente en tarjeta
+  cardContent.classList.add('font-comic', 'default-pallete');
+  cardContent.classList.remove('font-ubuntu', 'font-monserrat', 'orange-palette', 'blue-palette');
+  //colores y fuente en formulario
+
+  //skills en tarjeta
+  // skillDest.innerHTML = infoClean;
+  //skills en formulario
+
 }
 reset.addEventListener('click', clean);
 

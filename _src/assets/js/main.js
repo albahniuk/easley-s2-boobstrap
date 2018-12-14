@@ -36,10 +36,9 @@ function send() {
       btnCrearTarjeta.style.backgroundColor = '#d5d5d5';
     });
 };
-
 btnCrearTarjeta.addEventListener('click', send);
-//NOMBRE Y PUESTO
 
+//NOMBRE Y PUESTO
 const nameField = document.querySelector('#name');
 const puestoField = document.querySelector('#puesto');
 const nameCard = document.querySelector('.h1-description');
@@ -118,7 +117,7 @@ linkOrigin.addEventListener('keyup', writeMe);
 gitOrigin.addEventListener('keyup', writeMe);
 
 //SKILLS
-// Llamar a la Api de las Skills
+// Llamar a la Api de las Skills + añadir a la local storage
 const webApi = 'https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json';
 const skillsCont = document.querySelector('.container__skills');
 const keyStorage = 'skills';
@@ -155,48 +154,59 @@ function getStorage(key) {
 
 getList(webApi);
 
+//Aqui viene lo chungo: que se pinten en la tarjeta solo una vez y se
+// quite sin rechistar
 const skillDest = document.querySelector('.skills__list');
 const skillOrigin = document.querySelectorAll('.input-skills');
 
-
 for(const s of skillOrigin){
-  s.addEventListener('click', writeSkills);
+  s.addEventListener('change', checkInputs);
 }
 
-// function checkBoxLimit() {
-//   const skillOrigin = document.querySelectorAll('.input-skills');
-//   const limit = 3;
-// for (let i = 0; i < skillOrigin.length; i++) {
-//   skillOrigin[i].onclick = function () {
-//     let checkedcount = 0;
-//     for (let i = 0; i < skillOrigin.length; i++) {
-//        checkedcount += (skillOrigin[i].checked)? 1:0;
-//      }
-//      if (checkedcount > limit) {
-//        alert('Elige un máximo de ' + limit + ' habilidades.');
-//        this.checked = false;
-//      }
-//    }
-//  }
-// };
+// Funcion manejadora del evento click de cada input
+// que deshabilita y habilita los checkboxes en función del número de checkboxes checked.
+function checkInputs(event) {
+  //aqui se crea la lista de la Card
+  let cardList = document.createElement('li');
+  cardList.className = `skill list__item--${this.innerText}`;
+  let cardElement = document.createTextNode(`${this.innerText}`);
+  cardList.appendChild(cardElement);
+  let cardElementSpecific = document.querySelector(`.list__item--${this.innerText}`);
 
-function writeSkills(e) {
-  const author = e.currentTarget.innerText;
+  //Empieza la fiesta
+  if(jason.skills.length < 3 && event.target.checked === true){
+    console.log('Se ha añadido correctamente');
+    skillDest.appendChild(cardList);
+    jason.skills.push(event.target.innerText);
+    console.log(jason.skills);
 
-  //aqui hay que meter un if para que compruebe si esta pintado ya + tres maximo
-  skillDest.innerHTML += `<li class="skill list__item--html">${author}</li>`;
-  //ODIO JAVASCRIPT !!!!!!!!!!!
+  } else {
+    console.log('Se ha borrado correctamente');
+    event.target.checked = false;
+    //AQUI MIRAMOS SI ESTABA DENTRO DE LA LISTA DE LA CARD Y LO BORRAMOS
+    if(cardElementSpecific){
+      skillDest.removeChild(cardList);
+      jason.skills.splice(jason.skills.indexOf(event.target.innerText), 1);
+    }
+  }
 
-  jason.skills.push(author);
-  console.log(jason);
-  // checkBoxLimit();
-};
+  //Si la lista de inputs seleccionados es igual o mayor a 3, tenemos que deshabilitar los inputs no seleccionados y sino,
+  //habilitamos los inputs no seleccionados.
+  if (jason.skills.length >= 3) {
+    for (let i = 0; i < jason.skills.length; i++ ) {
+      skillOrigin[i].disabled = true;
+    }
+  } else { //habilito otra vez todos los inputs porque ya no tengo 3 opciones seleccionadas
+      for (let i = 0; i < jason.skills.length.length; i++ ) {
+        skillOrigin[i].disabled = false;
+        }
+    }
+}
 
 
 //PALETAS
 
 const cardContent = document.querySelector('.section__card-content');
-// const orangePalette = document.querySelector('.orange-palette');
 const porDefecto = document.querySelector('.default');
 const orange = document.querySelector('.orange');
 const blue = document.querySelector('.blue');
@@ -227,8 +237,6 @@ function colorClickB(e) {
   cardContent.classList.remove('default-palette');
   cardContent.classList.add('blue-palette');
   jason.palette = 3;
-
-
 }
 
 blue.addEventListener('click', colorClickB);
@@ -247,8 +255,6 @@ function fontClickU (e){
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.remove('font-comic');
   jason.typography = 3;
-
-
 }
 ubuntu.addEventListener('click', fontClickU);
 
@@ -258,9 +264,6 @@ function fontClickM (e){
   cardContent.classList.add('font-monserrat');
   cardContent.classList.remove('font-comic');
   jason.typography = 1;
-
-
-
 }
 
 monse.addEventListener('click', fontClickM);
@@ -271,9 +274,7 @@ function fontClickC (e){
   cardContent.classList.remove('font-monserrat');
   cardContent.classList.add('font-comic');
   jason.typography = 2;
-
 }
-
 comic.addEventListener('click', fontClickC);
 
 
@@ -290,8 +291,15 @@ function clean() {
   gitDest.innerHTML=infoClean;
   nameCard.innerHTML=labelName.innerHTML;
   puestoCard.innerHTML=labelPuesto.innerHTML;
+  skillDest.innerHTML=infoClean;
+  profileImage.style.backgroundImage="url('https://www.puzzlepassion.com/wp-content/uploads/2017/09/darth_vader.jpg')";
+  phoneOrigin.value=infoClean;
+  mailOrigin.value=infoClean;
+  nameField.value=infoClean;
+  puestoField.value=infoClean;
+  linkOrigin.value=infoClean;
+  gitOrigin.value=infoClean;
 }
-
 reset.addEventListener('click',clean);
 
 

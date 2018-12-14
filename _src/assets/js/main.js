@@ -291,7 +291,7 @@ function clean() {
   nameCard.innerHTML=labelName.innerHTML;
   puestoCard.innerHTML=labelPuesto.innerHTML;
   skillDest.innerHTML=infoClean;
-  profileImage.style.backgroundImage="url('https://via.placeholder.com/240x200')";
+  profileImage.style.backgroundImage="url('https://www.puzzlepassion.com/wp-content/uploads/2017/09/darth_vader.jpg')";
   phoneOrigin.value=infoClean;
   mailOrigin.value=infoClean;
   nameField.value=infoClean;

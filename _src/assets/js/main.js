@@ -6,12 +6,12 @@ const jason = {
   "typography": 0,
   "name": "",
   "job": "",
-  "phone":"",
-  "email":"",
+  "phone": "",
+  "email": "",
   "linkedin": "",
   "github": "",
   "photo": "",
-  "skills":[]
+  "skills": []
 };
 
 //Enviar el JSON y devuelve Card
@@ -29,7 +29,7 @@ function send() {
     .then(urlResponse => urlResponse.json())
     .then(url => {
       paintURL.innerHTML =
-      `<p class="twitter-text">La tarjeta ha sido creada:</p>
+        `<p class="twitter-text">La tarjeta ha sido creada:</p>
       <a class="card-link" href="${url.cardURL}" target="_blank">${url.cardURL}</a>
       <a class="link-twitter" href="https://twitter.com/home?status=${url.cardURL}" target="_blank">
       <button class="btn-twitter" type="button"><i class="fab fa-twitter"></i>Compartir en twitter</button></a>`;
@@ -43,17 +43,17 @@ const nameField = document.querySelector('#name');
 const puestoField = document.querySelector('#puesto');
 const nameCard = document.querySelector('.h1-description');
 const puestoCard = document.querySelector('.text-description');
-const nameJson ='name';
-const jobJson ='job';
+const nameJson = 'name';
+const jobJson = 'job';
 
-nameField.addEventListener('keyup', function(e){
+nameField.addEventListener('keyup', function (e) {
   const preview = e.currentTarget;
   nameCard.innerHTML = preview.value;
   jason.name = nameField.value;
   createStorage(nameJson, nameField.value);
 });
 
-puestoField.addEventListener('keyup', (e)=>{
+puestoField.addEventListener('keyup', (e) => {
   const preview = e.currentTarget;
   puestoCard.innerHTML = preview.value;
   jason.job = puestoField.value;
@@ -68,16 +68,16 @@ const fileField = document.querySelector('#img-selector');
 const profileImage = document.querySelector('.profile-pic');
 const divPreviewImage = document.querySelector('.uploadFile');
 
-function getImage(e){
+function getImage(e) {
   const myFile = e.currentTarget.files[0];
   fr.addEventListener('load', writeImage);
   fr.readAsDataURL(myFile);
 }
 
 function writeImage() {
-profileImage.style.backgroundImage = `url(${fr.result})`;
-divPreviewImage.style.backgroundImage = `url(${fr.result})`;
-jason.photo = fr.result;
+  profileImage.style.backgroundImage = `url(${fr.result})`;
+  divPreviewImage.style.backgroundImage = `url(${fr.result})`;
+  jason.photo = fr.result;
 }
 
 function fakeFileClick() {
@@ -89,13 +89,13 @@ fileField.addEventListener('change', getImage);
 
 //LINKS MEDIA
 
-const phoneOrigin = document.querySelector ('#phone');
-const phoneDest = document.querySelector ('.contact-list__tlf');
-const mailOrigin = document.querySelector ('#email');
-const mailDest = document.querySelector ('.contact-list__mail');
-const linkOrigin = document.querySelector ('#linkedin');
-const linkDest = document.querySelector ('.contact-list__linkedin');
-const gitOrigin = document.querySelector ('#github');
+const phoneOrigin = document.querySelector('#phone');
+const phoneDest = document.querySelector('.contact-list__tlf');
+const mailOrigin = document.querySelector('#email');
+const mailDest = document.querySelector('.contact-list__mail');
+const linkOrigin = document.querySelector('#linkedin');
+const linkDest = document.querySelector('.contact-list__linkedin');
+const gitOrigin = document.querySelector('#github');
 const gitDest = document.querySelector('.contact-list__github');
 
 function writeMe(e) {
@@ -124,12 +124,12 @@ const keyStorage = 'skills';
 
 function writeList(skillsCont, arraySkills) {
   for (let i = 0; i < arraySkills.length; i++) {
-    skillsCont.innerHTML += `<label for="${arraySkills[i]}" class= "input-skills"> <input class="maxCheck" id="${arraySkills[i]}" type="checkbox"  value="" name="${arraySkills[i]}">${arraySkills[i]}</label>`;
+    skillsCont.innerHTML += `<label for="${arraySkills[i]}" class= "input-skills"> <input class="maxCheck" id="${arraySkills[i]}" type="checkbox"  value="${arraySkills[i]}" name="skills">${arraySkills[i]}</label>`;
   }
 }
 
 function getList() {
-  if(getStorage(keyStorage)) {
+  if (getStorage(keyStorage)) {
     let arraySkills = JSON.parse(getStorage(keyStorage));
     writeList(skillsCont, arraySkills);
   } else {
@@ -159,7 +159,7 @@ getList(webApi);
 const skillDest = document.querySelector('.skills__list');
 const skillOrigin = document.querySelectorAll('.input-skills');
 
-for(const s of skillOrigin){
+for (const s of skillOrigin) {
   s.addEventListener('change', checkInputs);
 }
 
@@ -174,33 +174,35 @@ function checkInputs(event) {
   let cardElementSpecific = document.querySelector(`.list__item--${this.innerText}`);
 
   //Empieza la fiesta
-  if(jason.skills.length < 3 && event.target.checked === true){
+  if (jason.skills.length < 3 && event.target.checked === true) {
     console.log('Se ha añadido correctamente');
     skillDest.appendChild(cardList);
-    jason.skills.push(event.target.innerText);
+    jason.skills.push(event.currentTarget.innerText);
     console.log(jason.skills);
 
   } else {
     console.log('Se ha borrado correctamente');
     event.target.checked = false;
+
     //AQUI MIRAMOS SI ESTABA DENTRO DE LA LISTA DE LA CARD Y LO BORRAMOS
-    if(cardElementSpecific){
-      skillDest.removeChild(cardList);
+    if (cardElementSpecific) {
+      skillDest.removeChild(cardElementSpecific);
       jason.skills.splice(jason.skills.indexOf(event.target.innerText), 1);
     }
   }
+  console.log(jason.skills);
 
   //Si la lista de inputs seleccionados es igual o mayor a 3, tenemos que deshabilitar los inputs no seleccionados y sino,
   //habilitamos los inputs no seleccionados.
   if (jason.skills.length >= 3) {
-    for (let i = 0; i < jason.skills.length; i++ ) {
+    for (let i = 0; i < jason.skills.length; i++) {
       skillOrigin[i].disabled = true;
     }
   } else { //habilito otra vez todos los inputs porque ya no tengo 3 opciones seleccionadas
-      for (let i = 0; i < jason.skills.length.length; i++ ) {
-        skillOrigin[i].disabled = false;
-        }
+    for (let i = 0; i < jason.skills.length; i++) {
+      skillOrigin[i].disabled = false;
     }
+  }
 }
 
 
@@ -248,7 +250,7 @@ const ubuntu = document.querySelector('#ubuntu');
 const comic = document.querySelector('#comic');
 const monse = document.querySelector('#monserrat');
 
-function fontClickU (e){
+function fontClickU(e) {
   const f = e.currentTarget.value;
 
   cardContent.classList.add('font-ubuntu');
@@ -258,7 +260,7 @@ function fontClickU (e){
 }
 ubuntu.addEventListener('click', fontClickU);
 
-function fontClickM (e){
+function fontClickM(e) {
   const f = e.currentTarget.value;
   cardContent.classList.remove('font-ubuntu');
   cardContent.classList.add('font-monserrat');
@@ -268,7 +270,7 @@ function fontClickM (e){
 
 monse.addEventListener('click', fontClickM);
 
-function fontClickC (e){
+function fontClickC(e) {
   const f = e.currentTarget.value;
   cardContent.classList.remove('font-ubuntu');
   cardContent.classList.remove('font-monserrat');
@@ -279,28 +281,28 @@ comic.addEventListener('click', fontClickC);
 
 
 //Boton Reset
-let labelName= document.querySelector('.form-label--name');
+let labelName = document.querySelector('.form-label--name');
 let labelPuesto = document.querySelector('.form-label--puesto');
-let allInputsClean= document.querySelectorAll('.form-input');
-let infoClean= "";
+let allInputsClean = document.querySelectorAll('.form-input');
+let infoClean = "";
 const reset = document.querySelector('.reset');
 function clean() {
-  phoneDest.innerHTML=infoClean;
-  mailDest.innerHTML=infoClean;
-  linkDest.innerHTML=infoClean;
-  gitDest.innerHTML=infoClean;
-  nameCard.innerHTML=labelName.innerHTML;
-  puestoCard.innerHTML=labelPuesto.innerHTML;
-  skillDest.innerHTML=infoClean;
-  profileImage.style.backgroundImage="url('https://www.puzzlepassion.com/wp-content/uploads/2017/09/darth_vader.jpg')";
-  phoneOrigin.value=infoClean;
-  mailOrigin.value=infoClean;
-  nameField.value=infoClean;
-  puestoField.value=infoClean;
-  linkOrigin.value=infoClean;
-  gitOrigin.value=infoClean;
+  phoneDest.innerHTML = infoClean;
+  mailDest.innerHTML = infoClean;
+  linkDest.innerHTML = infoClean;
+  gitDest.innerHTML = infoClean;
+  nameCard.innerHTML = labelName.innerHTML;
+  puestoCard.innerHTML = labelPuesto.innerHTML;
+  skillDest.innerHTML = infoClean;
+  profileImage.style.backgroundImage = "url('https://www.puzzlepassion.com/wp-content/uploads/2017/09/darth_vader.jpg')";
+  phoneOrigin.value = infoClean;
+  mailOrigin.value = infoClean;
+  nameField.value = infoClean;
+  puestoField.value = infoClean;
+  linkOrigin.value = infoClean;
+  gitOrigin.value = infoClean;
 }
-reset.addEventListener('click',clean);
+reset.addEventListener('click', clean);
 
 
 //collapsible

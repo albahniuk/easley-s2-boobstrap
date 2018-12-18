@@ -302,7 +302,10 @@ function clean() {
   cardContent.classList.add('font-comic', 'default-pallete');
   cardContent.classList.remove('font-ubuntu', 'font-monserrat', 'orange-palette', 'blue-palette');
   //colores y fuente en formulario
-
+  const checkRadio = document.querySelectorAll('.radio');
+  for (let i = 0; i < checkRadio.length; i++) {
+   checkRadio[i].checked= false;
+ }
   //skills en tarjeta
   skillDest.innerHTML = infoClean;
   //skills en formulario

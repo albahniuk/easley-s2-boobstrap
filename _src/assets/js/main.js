@@ -304,12 +304,14 @@ function clean() {
   //colores y fuente en formulario
 
   //skills en tarjeta
-  // skillDest.innerHTML = infoClean;
+  skillDest.innerHTML = infoClean;
   //skills en formulario
-
+  const checkList = document.querySelectorAll('.maxCheck');
+  for (let i = 0; i < checkList.length; i++) {
+   checkList[i].checked= false;
+ }
 }
 reset.addEventListener('click', clean);
-
 
 //collapsible
 

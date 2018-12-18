@@ -1,3 +1,4 @@
+'use strict';
 //SKILLS
 // Llamar a la Api de las Skills + añadir a la local storage
 const webApi = 'https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json';
@@ -26,13 +27,7 @@ function getList() {
   }
 }
 
-function createStorage(key, value) {
-  localStorage.setItem(key, value);
-}
 
-function getStorage(key) {
-  return localStorage.getItem(key);
-}
 
 getList(webApi);
 

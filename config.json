@@ -17,7 +17,18 @@
 	},
 	"js": {
 		"src": [
-			"_src/assets/js/main.js"
+      "_src/assets/js/jason.js",
+      "_src/assets/js/localstorage.js",
+      "_src/assets/js/namejob.js",
+      "_src/assets/js/uploadimg.js",
+      "_src/assets/js/linksmedia.js",
+      "_src/assets/js/skills.js",
+      "_src/assets/js/pattetestypo.js",
+      "_src/assets/js/reset.js",
+      "_src/assets/js/collapsibles.js"
+
+
+
 		],
 		"dest": "public/assets/js/",
     "dist": "docs/assets/js/"

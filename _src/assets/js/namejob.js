@@ -12,12 +12,15 @@ nameField.addEventListener('keyup', changeName);
 
 function getname() {
   if (getStorage(nameJson)) {
-    let arrayName = JSON.stringify(getStorage(nameJson));
-    nameCard.innerHTML = arrayName;
+    let arrayName = getStorage(nameJson);
+    if (arrayName !== '') {
+      nameCard.innerHTML = arrayName;
+    }
   }
 }
+getname();
 
-function changeName (e){
+function changeName(e) {
   getname();
   const preview = e.currentTarget;
   nameCard.innerHTML = preview.value;
@@ -25,10 +28,22 @@ function changeName (e){
   createStorage(nameJson, nameField.value);
 }
 
+function getjob(){
+  if (getStorage(jobJson)) {
+    let arrayJob = getStorage(jobJson);
+    if (arrayJob !== '') {
+      puestoCard.innerHTML = arrayJob;
+    }
+  }
+}
+getjob();
 
-puestoField.addEventListener('keyup', (e) => {
+function changeJob (e){
+  getjob();
   const preview = e.currentTarget;
   puestoCard.innerHTML = preview.value;
   jason.job = puestoField.value;
   createStorage(jobJson, puestoField.value);
-});
+}
+
+puestoField.addEventListener('keyup', changeJob);

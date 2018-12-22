@@ -9,12 +9,12 @@ function clean() {
   linkDest.innerHTML = infoClean;
   gitDest.innerHTML = infoClean;
   nameCard.innerHTML = 'Nombre Apellido';
-  puestoCard.innerHTML = 'Front-End developer';
+  jobCard.innerHTML = 'Front-End developer';
   profileImage.style.backgroundImage = "url('https://www.puzzlepassion.com/wp-content/uploads/2017/09/darth_vader.jpg')";
   phoneOrigin.value = infoClean;
   mailOrigin.value = infoClean;
   nameField.value = infoClean;
-  puestoField.value = infoClean;
+  jobField.value = infoClean;
   linkOrigin.value = infoClean;
   gitOrigin.value = infoClean;
   //colores y fuente en tarjeta

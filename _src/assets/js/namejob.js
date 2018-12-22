@@ -1,9 +1,9 @@
 'use strict';
 //NOMBRE Y PUESTO
 const nameField = document.querySelector('#name');
-const puestoField = document.querySelector('#puesto');
+const jobField = document.querySelector('#puesto');
 const nameCard = document.querySelector('.h1-description');
-const puestoCard = document.querySelector('.text-description');
+const jobCard = document.querySelector('.text-description');
 const nameJson = 'name';
 const jobJson = 'job';
 
@@ -32,7 +32,7 @@ function getjob(){
   if (getStorage(jobJson)) {
     let arrayJob = getStorage(jobJson);
     if (arrayJob !== '') {
-      puestoCard.innerHTML = arrayJob;
+      jobCard.innerHTML = arrayJob;
     }
   }
 }
@@ -41,9 +41,9 @@ getjob();
 function changeJob (e){
   getjob();
   const preview = e.currentTarget;
-  puestoCard.innerHTML = preview.value;
-  jason.job = puestoField.value;
-  createStorage(jobJson, puestoField.value);
+  jobCard.innerHTML = preview.value;
+  jason.job = jobField.value;
+  createStorage(jobJson, jobField.value);
 }
 
-puestoField.addEventListener('keyup', changeJob);
+jobField.addEventListener('keyup', changeJob);

@@ -1,6 +1,6 @@
 //PALETAS
 const cardContent = document.querySelector('.section__card-content');
-const porDefecto = document.querySelector('.default');
+const byDflt = document.querySelector('.default');
 const orange = document.querySelector('.orange');
 const blue = document.querySelector('.blue');
 
@@ -22,7 +22,7 @@ function colorClickD(e) {
   jason.palette = 1;
 }
 
-porDefecto.addEventListener('click', colorClickD);
+byDflt.addEventListener('click', colorClickD);
 
 function colorClickB(e) {
   const palette = e.target;

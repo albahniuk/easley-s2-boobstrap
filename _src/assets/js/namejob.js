@@ -7,8 +7,6 @@ const jobCard = document.querySelector('.text-description');
 const nameJson = 'name';
 const jobJson = 'job';
 
-nameField.addEventListener('keyup', changeName);
-
 
 function getname() {
   if (getStorage(nameJson)) {
@@ -21,7 +19,6 @@ function getname() {
 getname();
 
 function changeName(e) {
-  getname();
   const preview = e.currentTarget;
   nameCard.innerHTML = preview.value;
   jason.name = nameField.value;
@@ -39,11 +36,11 @@ function getjob(){
 getjob();
 
 function changeJob (e){
-  getjob();
   const preview = e.currentTarget;
   jobCard.innerHTML = preview.value;
   jason.job = jobField.value;
   createStorage(jobJson, jobField.value);
 }
 
+nameField.addEventListener('keyup', changeName);
 jobField.addEventListener('keyup', changeJob);

@@ -9,37 +9,14 @@ const jobJson = 'job';
 
 nameField.addEventListener('keyup', changeName);
 
-
-function getname() {
-  if (getStorage(nameJson)) {
-    let arrayName = getStorage(nameJson);
-    if (arrayName !== '') {
-      nameCard.innerHTML = arrayName;
-    }
-  }
-}
-getname();
-
 function changeName(e) {
-  getname();
   const preview = e.currentTarget;
   nameCard.innerHTML = preview.value;
   jason.name = nameField.value;
   createStorage(nameJson, nameField.value);
 }
 
-function getjob(){
-  if (getStorage(jobJson)) {
-    let arrayJob = getStorage(jobJson);
-    if (arrayJob !== '') {
-      jobCard.innerHTML = arrayJob;
-    }
-  }
-}
-getjob();
-
 function changeJob (e){
-  getjob();
   const preview = e.currentTarget;
   jobCard.innerHTML = preview.value;
   jason.job = jobField.value;
@@ -47,3 +24,26 @@ function changeJob (e){
 }
 
 jobField.addEventListener('keyup', changeJob);
+
+//LocalStorage
+function getjob(){
+  if (getStorage(jobJson)) {
+    let arrayJob = getStorage(jobJson);
+    if (arrayJob !== '') {
+      jobCard.innerHTML = arrayJob;
+      jobField.value = arrayJob;
+    }
+  }
+}
+getjob();
+
+function getname() {
+  if (getStorage(nameJson)) {
+    let arrayName = getStorage(nameJson);
+    if (arrayName !== '') {
+      nameCard.innerHTML = arrayName;
+      nameField.value = arrayName;
+    }
+  }
+}
+getname();

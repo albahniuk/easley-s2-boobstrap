@@ -27,8 +27,6 @@ function getList() {
   }
 }
 
-
-
 getList(webApi);
 
 //Aqui viene lo chungo: que se pinten en la tarjeta solo una vez y se

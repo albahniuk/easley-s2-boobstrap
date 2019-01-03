@@ -1,4 +1,5 @@
 //IMAGEN
+'use strict';
 
 const fr = new FileReader();
 const imageBtn = document.querySelector('.btn--img');

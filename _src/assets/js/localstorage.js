@@ -7,3 +7,4 @@ function getStorage(key) {
 }
 
 localStorage.setItem('dataJason', JSON.stringify(jason));
+

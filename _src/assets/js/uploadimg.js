@@ -17,6 +17,7 @@ function writeImage() {
   profileImage.style.backgroundImage = `url(${fr.result})`;
   divPreviewImage.style.backgroundImage = `url(${fr.result})`;
   jason.photo = fr.result;
+  createStorage('image', `url(${fr.result})`);
 }
 
 function fakeFileClick() {
@@ -25,3 +26,26 @@ function fakeFileClick() {
 
 imageBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
+
+function getImgLocalStorage(){
+  if(getStorage('image')) {
+    let arrayImg = getStorage('image');
+    if(arrayImg !== ''){
+      profileImage.style.backgroundImage = arrayImg;
+      divPreviewImage.style.backgroundImage = arrayImg;
+    }
+  }
+}
+
+getImgLocalStorage();
+
+// function getjob(){
+//   if (getStorage(jobJson)) {
+//     let arrayJob = getStorage(jobJson);
+//     if (arrayJob !== '') {
+//       jobCard.innerHTML = arrayJob;
+//       jobField.value = arrayJob;
+//     }
+//   }
+// }
+// getjob();
